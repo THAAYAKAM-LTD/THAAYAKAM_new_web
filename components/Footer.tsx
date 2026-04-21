@@ -78,9 +78,10 @@ export function Footer() {
               <div className="w-6 h-0.5 bg-cyan-500"></div>
             </div>
             <nav className="flex flex-col gap-3">
-              <FooterLink href="#">Services</FooterLink>
-              <FooterLink href="#">We Are</FooterLink>
-              <FooterLink href="#">Quote?</FooterLink>
+              <FooterLink href="/#services">Services</FooterLink>
+              <FooterLink href="/who-we-are">We Are</FooterLink>
+              <FooterLink href="/careers">Careers</FooterLink>
+              <FooterLink href="/contact">Quote?</FooterLink>
             </nav>
           </div>
 

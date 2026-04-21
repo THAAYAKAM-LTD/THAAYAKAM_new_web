@@ -19,31 +19,31 @@ export function Header() {
         {/* Navigation Links */}
         <nav className="hidden lg:flex items-center gap-8">
           <Link 
-            href="#" 
+            href="/" 
             className="text-brand-primary font-bold text-sm tracking-wider uppercase hover:opacity-80 transition-opacity"
           >
             Home
           </Link>
           <Link 
-            href="#portfolio" 
+            href="/#portfolio" 
             className="text-brand-dark font-semibold text-sm tracking-wider uppercase hover:text-brand-primary transition-colors"
           >
             Portfolio
           </Link>
           <Link 
-            href="#services" 
+            href="/services" 
             className="text-brand-dark font-semibold text-sm tracking-wider uppercase hover:text-brand-primary transition-colors"
           >
             Services
           </Link>
           <Link 
-            href="#about" 
+            href="/who-we-are" 
             className="text-brand-dark font-semibold text-sm tracking-wider uppercase hover:text-brand-primary transition-colors"
           >
             We Are
           </Link>
           <Link 
-            href="#careers" 
+            href="/careers" 
             className="text-brand-dark font-semibold text-sm tracking-wider uppercase hover:text-brand-primary transition-colors"
           >
             Careers

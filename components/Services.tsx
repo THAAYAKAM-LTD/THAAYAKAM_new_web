@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Cloud, Smartphone, Layout, Settings, Palette } from "lucide-react";
+import { Cloud, Smartphone, Code2, Paintbrush } from "lucide-react";
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -12,36 +12,36 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ icon, title, description, features }: ServiceCardProps) => (
-  <div className="relative bg-white rounded-[20px] shadow-[0px_10px_40px_rgba(0,0,0,0.06)] p-8 flex flex-col gap-5 h-full group hover:shadow-cyan-400/10 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
+  <div className="relative bg-white rounded-[32px] border border-gray-100 shadow-[0px_10px_40px_rgba(0,0,0,0.04)] p-10 flex flex-col gap-6 h-full group hover:shadow-cyan-400/10 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
     {/* Title + Icon row */}
     <div className="flex items-start justify-between gap-4 z-20">
-      <h4 className="text-[#15CEFF] font-bold text-[18px] leading-tight tracking-tight">
+      <h4 className="text-[#15CEFF] font-bold text-[22px] leading-tight tracking-tight">
         {title}
       </h4>
-      <div className="shrink-0 w-14 h-14 rounded-full bg-white border border-cyan-100 shadow-sm flex items-center justify-center text-[#15CEFF] group-hover:scale-110 transition-transform duration-300">
+      <div className="shrink-0 w-16 h-16 rounded-full bg-white border border-cyan-50 border-opacity-50 shadow-sm flex items-center justify-center text-[#15CEFF] group-hover:scale-110 transition-transform duration-300">
         {icon}
       </div>
     </div>
 
     {/* Description */}
-    <p className="text-black text-[16px] leading-relaxed font-normal flex-1 z-20">
+    <p className="text-black text-[15px] md:text-[16px] leading-[1.6] font-normal flex-1 z-20 opacity-90">
       {description}
     </p>
 
     {/* Feature list */}
-    <ul className="space-y-2 mt-2 z-20">
+    <ul className="space-y-3 mt-2 z-20">
       {features.map((f) => (
-        <li key={f} className="text-[16px] font-semibold text-black flex items-center gap-2">
+        <li key={f} className="text-[17px] font-bold text-black flex items-center gap-2">
           {f}
         </li>
       ))}
     </ul>
 
     {/* Explore link - Bottom Right */}
-    <div className="flex justify-end mt-4 z-20">
-      <button className="text-[#00D084] text-[16px] font-medium hover:translate-x-1 transition-all flex items-center gap-1 group/btn">
+    <div className="flex justify-end mt-6 z-20">
+      <button className="text-[#00D084] text-[17px] font-semibold hover:translate-x-1 transition-all flex items-center gap-1 group/btn">
         Explore
-        <span className="group-hover/btn:opacity-100 opacity-0 transition-opacity">→</span>
+        <span className="opacity-0 group-hover/btn:opacity-100 transition-opacity ml-1">→</span>
       </button>
     </div>
   </div>
@@ -49,7 +49,7 @@ const ServiceCard = ({ icon, title, description, features }: ServiceCardProps) =
 
 const SERVICES: ServiceCardProps[] = [
   {
-    icon: <Cloud size={24} />,
+    icon: <Cloud size={30} strokeWidth={1.5} />,
     title: "Cloud Consultation",
     description:
       "Elevate your business to new heights by seamlessly migrating your digital ecosystem to the cloud. Our commitment lies in providing cutting-edge, high-performing, and meticulously secured solutions that optimise costs. Our adept engineers, certified across AWS, GCP, and Azure, work collaboratively to realise:",
@@ -60,55 +60,44 @@ const SERVICES: ServiceCardProps[] = [
     ],
   },
   {
-    icon: <Smartphone size={24} />,
-    title: "Mobile Application",
+    icon: <Smartphone size={30} strokeWidth={1.5} />,
+    title: "Mobile App Development",
     description:
-      "Transform your business vision into a powerful mobile experience. We build native and cross-platform mobile apps using Flutter and React Native that delight users on iOS and Android, with seamless performance and scalable architecture designed for growth.",
+      "Empower your business with the magic of mobile. Seamlessly connect with your audience and showcase your offerings at their fingertips. Our dedicated mobile app development service empowers you to share your vision with the world. Our seasoned team harnesses cutting-edge technologies to guide you across:",
     features: [
-      "Cross-Platform iOS & Android",
-      "Real-time & Offline Capability",
-      "App Store Deployment & Support",
+      "Android App Prowess", 
+      "iOS App Excellence", 
+      "Ongoing Maintenance"
     ],
   },
   {
-    icon: <Layout size={24} />,
+    icon: <Code2 size={30} strokeWidth={1.5} />,
     title: "Web App Development",
     description:
-      "We craft fast, secure, and scalable web applications using modern frameworks such as Next.js, React, and Laravel. From dynamic portals to complex SaaS platforms, our full-stack engineers bring your product to life with pixel-perfect precision and solid backend architecture.",
+      "Elevate your brand's online presence with captivating web applications that exhibit your offerings to the world. Our expert web app development service equips you with adaptive solutions, merging form and function through an array of innovative tools. Our skilled team guides you through:",
     features: [
-      "Full-Stack React & Next.js",
-      "RESTful API & Microservices",
-      "SEO-Optimised & Accessible",
+      "Full-Stack Expertise", 
+      "Tailored API Solutions", 
+      "Ongoing Maintenance"
     ],
   },
   {
-    icon: <Settings size={24} />,
-    title: "Managed IT",
-    description:
-      "Focus on growing your business while we manage your entire technology infrastructure. Our managed IT services cover proactive monitoring, security patching, incident response, and cloud cost optimisation — ensuring your systems run flawlessly around the clock.",
-    features: [
-      "24/7 Infrastructure Monitoring",
-      "Cyber Security & Compliance",
-      "DevOps & CI/CD Pipelines",
-    ],
-  },
-  {
-    icon: <Palette size={24} />,
+    icon: <Paintbrush size={30} strokeWidth={1.5} />,
     title: "Brand Design",
     description:
-      "Your brand is your story. We craft cohesive visual identities and meticulous UI/UX designs that resonate with your audience, from logo and design system creation through to full product interface design — ensuring every touchpoint reflects who you are.",
+      "Amidst the dynamic competitive landscape, let your brand shine with unparalleled identity and impactful customer engagement. Our dedicated team commits to infusing creativity and passion into every aspect of your brand's journey, including:",
     features: [
-      "Logo & Brand Identity",
-      "UI/UX Design & Prototyping",
-      "Design System & Style Guides",
+      "Identity Design Excellence", 
+      "Seamless UI/UX Innovation", 
+      "Striking Product Design"
     ],
   },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="relative w-full overflow-hidden bg-white py-0">
-      {/* Subtle background dot grid - matches Hero section */}
+    <section id="services" className="relative w-full overflow-hidden bg-white pt-8 lg:pt-12 pb-16 lg:pb-24">
+      {/* Subtle background dot grid */}
       <div
         className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
         style={{
@@ -120,42 +109,28 @@ export function Services() {
       <div className="relative z-10 max-w-[1280px] mx-auto px-6">
 
         {/* Header */}
-        <div className="flex flex-col items-center text-center gap-6 mb-10">
-          <h2 className="text-[#15CEFF] text-[28px] font-medium tracking-tight">
-            What We Do!
+        <div className="flex flex-col items-center text-center gap-6 mb-16">
+          <h2 className="text-[#15CEFF] text-[32px] font-semibold tracking-tight">
+            What we do! ⚙️
           </h2>
-          <p className="text-black text-[20px] max-w-[808px] leading-relaxed font-medium">
-            We deliver 🙌 creatively led and strategically driven innovative solutions 💡 tied
-            with robust trust and intelligence to deploy your dream to a new era!
+          <p className="text-[#000000] text-[20px] max-w-[789px] leading-[1.4] font-semibold">
+            Our team 😎 with extensive knowledge and innovative thoughts is here 
+            to deliver top-performing innovative solutions tied with 
+            robust, trust and intelligence to deploy your performance into a new era!
           </p>
         </div>
 
-        {/* Cards — 2 + 2 + 1 centred */}
-        <div className="space-y-8">
-          {/* Row 1 */}
-          <div className="grid md:grid-cols-2 gap-12">
-            {SERVICES.slice(0, 2).map((s) => (
-              <ServiceCard key={s.title} {...s} />
-            ))}
-          </div>
-          {/* Row 2 */}
-          <div className="grid md:grid-cols-2 gap-12">
-            {SERVICES.slice(2, 4).map((s) => (
-              <ServiceCard key={s.title} {...s} />
-            ))}
-          </div>
-          {/* Row 3 — centred single card */}
-          <div className="flex justify-center">
-            <div className="w-full md:w-[calc(50%-1.5rem)]">
-              <ServiceCard {...SERVICES[4]} />
-            </div>
-          </div>
+        {/* Cards — 2x2 Grid */}
+        <div className="grid md:grid-cols-2 gap-10">
+          {SERVICES.map((s) => (
+            <ServiceCard key={s.title} {...s} />
+          ))}
         </div>
 
         {/* CTA */}
-        <div className="flex justify-center mt-16 z-20">
+        <div className="flex justify-center mt-20 z-20">
           <Link href="/contact">
-            <button className="px-10 py-4 rounded-[10px] bg-[#15CEFF] text-white font-bold text-lg hover:bg-[#00b4d8] transition-all shadow-lg hover:shadow-cyan-200">
+            <button className="px-10 py-4 rounded-[10px] bg-[#15CEFF] text-white font-bold text-[18px] hover:bg-[#00b4d8] transition-all shadow-lg hover:shadow-cyan-100">
               Schedule a consultation 📅
             </button>
           </Link>

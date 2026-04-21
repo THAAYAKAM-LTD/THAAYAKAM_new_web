@@ -19,7 +19,7 @@ export function ClientLogos() {
   const duplicatedClients = [...clients, ...clients];
 
   return (
-    <section className="w-full bg-white py-0 overflow-hidden font-sans">
+    <section className="w-full bg-white pt-12 overflow-hidden font-sans">
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes scroll-left {
           0% { transform: translateX(0); }

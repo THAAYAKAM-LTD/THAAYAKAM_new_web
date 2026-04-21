@@ -152,8 +152,8 @@ export function Services() {
         </div>
 
         {/* CTA */}
-        <div className="flex justify-center mt-16">
-          <button className="px-10 py-3.5 rounded-full bg-brand-primary text-white font-bold text-base hover:bg-[#00acc1] transition-colors shadow-lg">
+        <div className="flex justify-center mt-16 z-20">
+          <button className="px-10 py-4 rounded-[10px] bg-[#15CEFF] text-white font-bold text-lg hover:bg-[#00b4d8] transition-all shadow-lg hover:shadow-cyan-200">
             Schedule a consultation 📅
           </button>
         </div>

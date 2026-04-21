@@ -1,6 +1,5 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
-import { SocialLinks } from "@/components/SocialLinks";
 import { ClientLogos } from "@/components/ClientLogos";
 import { Services } from "@/components/Services";
 import { Testimonials } from "@/components/Testimonials";
@@ -13,7 +12,6 @@ export default function Home() {
       <Header />
       <main className="flex-grow w-full">
         <Hero />
-        <SocialLinks />
         <ClientLogos />
         <Services />
         <Testimonials />

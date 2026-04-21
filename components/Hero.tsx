@@ -256,7 +256,7 @@ export function Hero() {
           </div>
 
           {/* Central mockup */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[40%] aspect-[254/162] flex items-center justify-center">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[32%] lg:w-[40%] aspect-[254/162] flex items-center justify-center transition-all">
             <img
               src="/icon/center.svg"
               alt="THAAYAKAM product mockup"
@@ -269,7 +269,7 @@ export function Hero() {
             <div
               key={icon.label}
               title={icon.label}
-              className="absolute z-30 transform -translate-x-1/2 -translate-y-1/2"
+              className="absolute z-30 transform -translate-x-1/2 -translate-y-1/2 scale-[0.55] md:scale-[0.8] lg:scale-100 transition-all duration-500"
               style={{
                 top: icon.top,
                 left: icon.left,
@@ -288,16 +288,25 @@ export function Hero() {
           ))}
 
           {/* Shopify Partners badge — bottom centre, precisely aligned */}
-          <div className="absolute z-40" style={{ left: "50%", top: "89%", transform: "translate(-50%, -50%)" }}>
+          <div className="absolute z-40 transition-all" style={{ left: "50%", top: "92%", transform: "translate(-50%, -50%)" }}>
             <div 
               className="hover:scale-105 transition-transform cursor-pointer flex items-center justify-center p-0"
-              style={{ width: "232px", height: "55px" }}
+              style={{ width: "150px", height: "36px" }} // Default mobile size
             >
-              <img
-                src="/icon/shopify_partners_logo.svg"
-                alt="Shopify Partners"
-                className="w-full h-full object-contain filter drop-shadow-sm"
-              />
+              <div className="hidden lg:block" style={{ width: "232px", height: "55px" }}>
+                <img
+                  src="/icon/shopify_partners_logo.svg"
+                  alt="Shopify Partners"
+                  className="w-full h-full object-contain filter drop-shadow-sm"
+                />
+              </div>
+              <div className="lg:hidden" style={{ width: "150px", height: "36px" }}>
+                <img
+                  src="/icon/shopify_partners_logo.svg"
+                  alt="Shopify Partners"
+                  className="w-full h-full object-contain filter drop-shadow-sm"
+                />
+              </div>
             </div>
           </div>
         </div>

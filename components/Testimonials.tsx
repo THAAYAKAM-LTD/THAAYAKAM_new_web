@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 interface TestimonialCardProps {
@@ -94,7 +95,7 @@ const TESTIMONIALS: TestimonialCardProps[] = [
 
 export function Testimonials() {
   return (
-    <section id="clients" className="w-full bg-white py-24">
+    <section id="clients" className="w-full bg-white py-0">
       <div className="max-w-[1280px] mx-auto px-6">
 
         {/* Header */}
@@ -114,9 +115,11 @@ export function Testimonials() {
 
         {/* CTA */}
         <div className="flex justify-center mt-14">
-          <button className="flex items-center gap-2 px-10 py-4 rounded-[10px] bg-[#15CEFF] text-white font-bold text-lg hover:bg-[#00b4d8] transition-all shadow-lg hover:shadow-cyan-200">
-            Portfolio 💼
-          </button>
+          <Link href="/#portfolio">
+            <button className="flex items-center gap-2 px-10 py-4 rounded-[10px] bg-[#15CEFF] text-white font-bold text-lg hover:bg-[#00b4d8] transition-all shadow-lg hover:shadow-cyan-200">
+              Portfolio 💼
+            </button>
+          </Link>
         </div>
 
       </div>

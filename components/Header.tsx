@@ -48,21 +48,18 @@ export function Header() {
           >
             Careers
           </Link>
-          <Link 
-            href="#contact" 
-            className="text-brand-dark font-semibold text-sm tracking-wider uppercase hover:text-brand-primary transition-colors"
-          >
-            Contact
-          </Link>
+
         </nav>
         
         {/* Call to Action Button */}
         <div>
-          <Button 
-            className="w-auto rounded-full px-8 text-sm font-semibold tracking-wider bg-brand-primary hover:bg-[#0ea5e9]"
-          >
-            Knock 🤜🤛
-          </Button>
+          <Link href="/contact">
+            <Button 
+              className="w-auto rounded-full px-8 text-sm font-semibold tracking-wider bg-brand-primary hover:bg-[#0ea5e9]"
+            >
+              Contact
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

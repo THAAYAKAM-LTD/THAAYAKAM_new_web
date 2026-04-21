@@ -101,7 +101,7 @@ export function HowWeDo() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <section id="process" className="relative w-full bg-white py-24 overflow-hidden">
+    <section id="process" className="relative w-full bg-white py-0 overflow-hidden">
       {/* Background dot grid */}
       <div
         className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"

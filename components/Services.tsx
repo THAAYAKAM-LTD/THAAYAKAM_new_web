@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { Cloud, Smartphone, Layout, Settings, Palette } from "lucide-react";
 
 interface ServiceCardProps {
@@ -106,7 +107,7 @@ const SERVICES: ServiceCardProps[] = [
 
 export function Services() {
   return (
-    <section id="services" className="relative w-full overflow-hidden bg-white py-24">
+    <section id="services" className="relative w-full overflow-hidden bg-white py-0">
       {/* Subtle background dot grid - matches Hero section */}
       <div
         className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
@@ -153,9 +154,11 @@ export function Services() {
 
         {/* CTA */}
         <div className="flex justify-center mt-16 z-20">
-          <button className="px-10 py-4 rounded-[10px] bg-[#15CEFF] text-white font-bold text-lg hover:bg-[#00b4d8] transition-all shadow-lg hover:shadow-cyan-200">
-            Schedule a consultation 📅
-          </button>
+          <Link href="/contact">
+            <button className="px-10 py-4 rounded-[10px] bg-[#15CEFF] text-white font-bold text-lg hover:bg-[#00b4d8] transition-all shadow-lg hover:shadow-cyan-200">
+              Schedule a consultation 📅
+            </button>
+          </Link>
         </div>
 
       </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 
 const TYPEWRITER_TERMS = [
   "Mobile Apps.",
@@ -141,12 +142,16 @@ export function Hero() {
 
           {/* CTA buttons */}
           <div className="flex flex-wrap items-center gap-4">
-            <button className="h-14 min-w-[240px] px-8 rounded-full bg-brand-primary hover:bg-[#00acc1] text-white text-base font-bold shadow-xl transition-all">
-              Schedule a consultation 📅
-            </button>
-            <button className="h-14 min-w-[150px] px-8 rounded-full border-2 border-brand-primary/40 text-brand-primary hover:bg-brand-primary/5 text-base font-bold transition-all">
-              Explore us 😎
-            </button>
+            <Link href="/contact">
+              <button className="h-14 min-w-[240px] px-8 rounded-full bg-brand-primary hover:bg-[#00acc1] text-white text-base font-bold shadow-xl transition-all">
+                Schedule a consultation 📅
+              </button>
+            </Link>
+            <Link href="#services">
+              <button className="h-14 min-w-[150px] px-8 rounded-full border-2 border-brand-primary/40 text-brand-primary hover:bg-brand-primary/5 text-base font-bold transition-all">
+                Explore us 😎
+              </button>
+            </Link>
           </div>
         </div>
 

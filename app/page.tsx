@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-white flex flex-col font-sans">
       <Header />
-      <main className="flex-grow w-full">
+      <main className="flex-grow w-full flex flex-col gap-[48px] mb-24">
         <Hero />
         <ClientLogos />
         <Services />

@@ -1,0 +1,110 @@
+{
+  "site": {
+    "name": "THAAYAKAM LTD",
+    "contactEmail": "info@thaayakam.co.uk",
+    "careersEmail": "careers@thaayakam.co.uk"
+  },
+  "pages": {
+    "home": {
+      "hero": {
+        "title": "Welcome to Thaayakam!",
+        "line1": "To make your footprints glow into the digital era,",
+        "line2": "We assist 🤝 you to gear-up yourself through,",
+        "cta": "Schedule a consultation 📅",
+        "explore": "Explore us 😎"
+      }
+    },
+    "services": {
+      "title": "What we do! ⚙️",
+      "subtitle": "Our team 😎 with extensive knowledge and innovative thoughts is here to deliver top-performing innovative solutions tied with robust, trust and intelligence to deploy your performance into a new era!",
+      "items": [
+        {
+          "id": "cloud",
+          "icon": "Cloud",
+          "title": "Cloud Consultation",
+          "description": "Elevate your business to new heights by seamlessly migrating your digital ecosystem to the cloud. Our commitment lies in providing cutting-edge, high-performing, and meticulously secured solutions that optimise costs. Our adept engineers, certified across AWS, GCP, and Azure, work collaboratively to realise:",
+          "features": [
+            "Cloud Architecture and Construction",
+            "Effortless Data Transition",
+            "Fortified Cloud Security"
+          ]
+        },
+        {
+          "id": "mobile",
+          "icon": "Smartphone",
+          "title": "Mobile App Development",
+          "description": "Empower your business with the magic of mobile. Seamlessly connect with your audience and showcase your offerings at their fingertips. Our dedicated mobile app development service empowers you to share your vision with the world. Our seasoned team harnesses cutting-edge technologies to guide you across:",
+          "features": [
+            "Android App Prowess", 
+            "iOS App Excellence", 
+            "Ongoing Maintenance"
+          ]
+        },
+        {
+          "id": "web",
+          "icon": "Code2",
+          "title": "Web App Development",
+          "description": "Elevate your brand's online presence with captivating web applications that exhibit your offerings to the world. Our expert web app development service equips you with adaptive solutions, merging form and function through an array of innovative tools. Our skilled team guides you through:",
+          "features": [
+            "Full-Stack Expertise", 
+            "Tailored API Solutions", 
+            "Ongoing Maintenance"
+          ]
+        },
+        {
+          "id": "brand",
+          "icon": "Paintbrush",
+          "title": "Brand Design",
+          "description": "Amidst the dynamic competitive landscape, let your brand shine with unparalleled identity and impactful customer engagement. Our dedicated team commits to infusing creativity and passion into every aspect of your brand's journey, including:",
+          "features": [
+            "Identity Design Excellence", 
+            "Seamless UI/UX Innovation", 
+            "Striking Product Design"
+          ]
+        }
+      ]
+    },
+    "whoWeAre": {
+      "hero": {
+        "title": "Who We Are!",
+        "subtitle": "We are a catalyst for digital transformation, dedicated to pushing the boundaries of what's possible.",
+        "paragraphs": [
+          "Our founders bring collective expertise across various domains, ranging from large-scale enterprise environments to innovative startup landscapes. THAAYAKAM is built on the pillars of core engineering, trust, and agility.",
+          "We specialise in crafting premium digital experiences and robust technical architectures. Our mission is to bridge the gap between complex engineering and elegant, user-centric solutions.",
+          "With a global mindset and a commitment to excellence, we help our clients navigate the ever-evolving technology landscape with confidence."
+        ]
+      },
+      "future": {
+        "title": "Our Future!",
+        "subtitle": "Anticipating the shifts in technology, global regulations, and environmental dynamics, THAAYAKAM LTD remains committed to continual adaptation and innovation. Our pursuits encompass two overarching objectives:",
+        "points": [
+          {
+            "heading": "Pioneering Research and Global Productisation:",
+            "text": "We're committed to translating our innovations into impactful global solutions, catalysing positive change across industries."
+          },
+          {
+            "heading": "Bridging the Digital Divide:",
+            "text": "As advocates of an inclusive digital future, we strive to enhance accessibility and awareness, fostering a world where the digital divide is but a distant memory."
+          }
+        ]
+      }
+    },
+    "careers": {
+      "hero": {
+        "title": "Embark on a journey of excellence ⚡",
+        "paragraphs": [
+          "We are an enterprising startup driven by a team of dedicated professionals. Our commitment lies in delivering an array of comprehensive services to our esteemed clients.",
+          "In line with this vision, we are actively seeking individuals who share our passion for technology, thrive in learning novel concepts, and exhibit exceptional logical thinking and problem-solving acumen. If you believe you align with our organizational ethos, kindly submit your resume.",
+          "Our meticulous selection process entails multiple stages to ensure the right fit for both you and us."
+        ]
+      },
+      "recruitment": {
+        "title": "We're expanding our team!",
+        "line1": "We are eagerly poised to expand our teams, driving towards profound impact.",
+        "line2": "Kindly share your resume with us while indicating the preferred job title as",
+        "subject": "Career - [Your Preferred Job Title]",
+        "line4": "We are committed to guiding your journey to new heights."
+      }
+    }
+  }
+}

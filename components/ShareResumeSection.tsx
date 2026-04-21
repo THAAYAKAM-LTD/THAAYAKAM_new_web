@@ -2,17 +2,28 @@
 
 import React from "react";
 
-export function ShareResumeSection() {
+interface ShareResumeProps {
+  data?: {
+    line1: string;
+    line2: string;
+    subject: string;
+    line4: string;
+  };
+}
+
+export function ShareResumeSection({ data }: ShareResumeProps) {
+  if (!data) return null;
+
   return (
     <section className="w-full bg-white py-12">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="bg-white rounded-2xl border border-gray-200 p-12 shadow-sm text-center">
           <div className="max-w-[850px] mx-auto mb-10">
             <p className="text-[#000000] text-[16px] font-semibold leading-[1.8] tracking-[0.07em]">
-              We are eagerly poised to expand our teams, driving towards profound impact. <br />
-              Kindly share your resume with us while indicating the preferred job title as <br />
-              <span className="font-bold underline underline-offset-4">'Career - [Your Preferred Job Title]'</span>. <br />
-              We are committed to guiding your journey to new heights.
+              {data.line1} <br />
+              {data.line2} <br />
+              <span className="font-bold underline underline-offset-4">'{data.subject}'</span>. <br />
+              {data.line4}
             </p>
           </div>
 

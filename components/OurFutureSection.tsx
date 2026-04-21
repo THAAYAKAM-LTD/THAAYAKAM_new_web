@@ -2,7 +2,22 @@
 
 import React from "react";
 
-export function OurFutureSection() {
+interface FuturePoint {
+  heading: string;
+  text: string;
+}
+
+interface OurFutureSectionProps {
+  data?: {
+    title: string;
+    subtitle: string;
+    points: FuturePoint[];
+  };
+}
+
+export function OurFutureSection({ data }: OurFutureSectionProps) {
+  if (!data) return null;
+
   return (
     <section className="relative w-full bg-white py-12 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6">
@@ -12,35 +27,24 @@ export function OurFutureSection() {
           <div className="flex-1 text-center lg:text-left space-y-8 max-w-[650px]">
             <div className="space-y-6">
               <h2 className="text-[#15CEFF] text-[28px] font-medium tracking-tight">
-                Our Future!
+                {data.title}
               </h2>
-              <div className="text-black text-[18px] leading-[1.6] font-normal space-y-6">
+              <div className="text-black text-[18px] leading-[1.6] font-normal space-y-8">
                 <p>
-                  Anticipating the shifts in technology, global regulations, and environmental dynamics, 
-                  <strong> THAAYAKAM LTD</strong> remains committed to continual adaptation and innovation. 
-                  Our pursuits encompass two overarching objectives:
+                  {data.subtitle}
                 </p>
 
-                <div className="space-y-2">
-                  <h3 className="font-bold">Pioneering Research and Global Productisation:</h3>
-                  <p>
-                    We're committed to translating our innovations into impactful global solutions, 
-                    catalysing positive change across industries.
-                  </p>
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="font-bold">Bridging the Digital Divide:</h3>
-                  <p>
-                    As advocates of an inclusive digital future, we strive to enhance accessibility and awareness, 
-                    fostering a world where the digital divide is but a distant memory.
-                  </p>
-                </div>
+                {data.points.map((point, i) => (
+                  <div key={i} className="space-y-2">
+                    <h3 className="font-bold">{point.heading}</h3>
+                    <p>{point.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Hexagonal Illustration - Mirrored Hero style (on the right) */}
+          {/* Hexagonal Illustration */}
           <div className="relative flex-1 flex items-center justify-center">
             <div className="relative w-full max-w-[550px] h-[495px] flex items-center justify-center translate-x-[20px]">
               <svg
@@ -108,7 +112,7 @@ export function OurFutureSection() {
                 />
               </svg>
               
-              {/* Illustration - Reusing the team spirit SVG which matches Image 153 */}
+              {/* Illustration */}
               <div className="relative z-10 w-[50%] h-[50%] flex items-center justify-center">
                 <img 
                   src="/who_we_are/undraw_team_spirit_re_yl1v.svg" 

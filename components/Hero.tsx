@@ -19,10 +19,6 @@ interface OrbitIcon {
   cardSize: number; // outer white circle size px
 }
 
-/**
- * Icon positions derived directly from the Figma landing-image-new-desktop frame
- * (584×584 starting at x=672, y=124). Percentages are the icon centres.
- */
 const ORBIT_ICONS: OrbitIcon[] = [
   { src: "/icon/pthon_logo.svg", label: "Python", top: "12.5%", left: "33%", size: 60, cardSize: 72 },
   { src: "/icon/nextjs-logo.svg", label: "Next.js", top: "14.4%", left: "51.5%", size: 50, cardSize: 60 },
@@ -41,7 +37,17 @@ const ORBIT_ICONS: OrbitIcon[] = [
   { src: "/icon/asp_net_logo.svg", label: ".NET", top: "79.5%", left: "78.9%", size: 60, cardSize: 84 },
 ];
 
-export function Hero() {
+interface HeroProps {
+  data?: {
+    title: string;
+    line1: string;
+    line2: string;
+    cta: string;
+    explore: string;
+  };
+}
+
+export function Hero({ data }: HeroProps) {
   const [termIndex, setTermIndex] = React.useState(0);
   const [displayText, setDisplayText] = React.useState("");
   const [isDeleting, setIsDeleting] = React.useState(false);
@@ -69,12 +75,13 @@ export function Hero() {
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, termIndex]);
 
+  if (!data) return null;
+
   return (
     <section 
       id="home"
       className="relative w-full overflow-hidden bg-white min-h-[calc(100vh-180px)] flex flex-col justify-center"
     >
-      {/* CSS Keyframes for Lighting Effects */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes dash-move {
           from { stroke-dashoffset: 0; }
@@ -102,7 +109,6 @@ export function Hero() {
         }
       `}} />
 
-      {/* Subtle background dot grid */}
       <div
         className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
         style={{
@@ -124,10 +130,9 @@ export function Hero() {
           </h1>
 
           <div className="flex flex-col items-start gap-3">
-            {/* Subtitle */}
             <p className="text-black text-[20px] font-medium leading-[1.6] tracking-[0.05em] text-left">
-              <span className="block md:whitespace-nowrap">To make your footprints glow into the digital era,</span>
-              <span className="block md:whitespace-nowrap">We assist <span className="text-orange-500">🤝</span> you to gear-up yourself through,</span>
+              <span className="block md:whitespace-nowrap">{data.line1}</span>
+              <span className="block md:whitespace-nowrap">{data.line2}</span>
             </p>
 
             {/* Typewriter */}
@@ -144,12 +149,12 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/contact">
               <button className="h-14 min-w-[240px] px-8 rounded-full bg-brand-primary hover:bg-[#00acc1] text-white text-base font-bold shadow-xl transition-all">
-                Schedule a consultation 📅
+                {data.cta}
               </button>
             </Link>
             <Link href="#services">
               <button className="h-14 min-w-[150px] px-8 rounded-full border-2 border-brand-primary/40 text-brand-primary hover:bg-brand-primary/5 text-base font-bold transition-all">
-                Explore us 😎
+                {data.explore}
               </button>
             </Link>
           </div>
@@ -157,39 +162,34 @@ export function Hero() {
 
         {/* ---------- Right column — landing image 584x584 ---------- */}
         <div className="relative w-full max-w-[584px] mx-auto aspect-square select-none">
-          {/* Soft outer glow */}
           <div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] rounded-full pointer-events-none z-0"
             style={{ background: "rgba(21, 206, 255, 0.08)", filter: "blur(120px)" }}
           />
 
-          {/* Master circular backdrop */}
           <div 
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square rounded-full bg-white shadow-[0_0_120px_rgba(21,206,255,0.12)] z-0"
             aria-hidden="true"
           />
 
-          {/* Dynamic SVG Lightning & Orbit Lines */}
           <svg
             className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-visible"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
             aria-hidden="true"
           >
-            {/* Outer Static Orbit */}
             <circle
               cx="50"
               cy="50"
               r="42.5"
               fill="none"
               stroke="#15CEFF"
-              strokeOpacity="0.6" // Increased opacity
-              strokeWidth="0.8" // Increased width
+              strokeOpacity="0.6"
+              strokeWidth="0.8"
               strokeDasharray="2 4"
               className="orbit-dashed-anim"
               vectorEffect="non-scaling-stroke"
             />
-            {/* Outer Lighting Comet Move */}
             <circle
               cx="50"
               cy="50"
@@ -197,25 +197,23 @@ export function Hero() {
               fill="none"
               stroke="#15CEFF"
               strokeWidth="1.2"
-              strokeDasharray="40 160" // Visible comet segment
+              strokeDasharray="40 160"
               className="comet-effect-anim"
               style={{ filter: "drop-shadow(0 0 8px #15CEFF)" }}
               vectorEffect="non-scaling-stroke"
             />
-            {/* Inner Static Orbit */}
             <circle
               cx="50"
               cy="50"
               r="35"
               fill="none"
               stroke="#15CEFF"
-              strokeOpacity="0.5" // Increased opacity
-              strokeWidth="0.8" // Increased width
+              strokeOpacity="0.5"
+              strokeWidth="0.8"
               strokeDasharray="2 4"
               className="orbit-dashed-anim"
               vectorEffect="non-scaling-stroke"
             />
-            {/* Inner Lighting Comet Move */}
             <circle
               cx="50"
               cy="50"
@@ -223,14 +221,13 @@ export function Hero() {
               fill="none"
               stroke="#15CEFF"
               strokeWidth="1.2"
-              strokeDasharray="30 170" // Visible comet segment
+              strokeDasharray="30 170"
               className="comet-effect-anim"
               style={{ filter: "drop-shadow(0 0 8px #15CEFF)" }}
               vectorEffect="non-scaling-stroke"
             />
           </svg>
 
-          {/* Hexagonal backdrop */}
           <div className="core-glow-anim absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[53%] aspect-square flex items-center justify-center">
             <svg
               viewBox="0 0 100 100"
@@ -260,7 +257,6 @@ export function Hero() {
             </svg>
           </div>
 
-          {/* Central mockup */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-[32%] lg:w-[40%] aspect-[254/162] flex items-center justify-center transition-all">
             <img
               src="/icon/center.svg"
@@ -269,7 +265,6 @@ export function Hero() {
             />
           </div>
 
-          {/* Floating tech icons — BACK TO ORIGINAL LOCATIONS */}
           {ORBIT_ICONS.map((icon) => (
             <div
               key={icon.label}
@@ -292,11 +287,10 @@ export function Hero() {
             </div>
           ))}
 
-          {/* Shopify Partners badge — bottom centre, precisely aligned */}
           <div className="absolute z-40 transition-all" style={{ left: "50%", top: "92%", transform: "translate(-50%, -50%)" }}>
             <div 
               className="hover:scale-105 transition-transform cursor-pointer flex items-center justify-center p-0"
-              style={{ width: "150px", height: "36px" }} // Default mobile size
+              style={{ width: "150px", height: "36px" }}
             >
               <div className="hidden lg:block" style={{ width: "232px", height: "55px" }}>
                 <img

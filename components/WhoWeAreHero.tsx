@@ -2,7 +2,17 @@
 
 import * as React from "react";
 
-export function WhoWeAreHero() {
+interface WhoWeAreHeroProps {
+  data?: {
+    title: string;
+    subtitle: string;
+    paragraphs: string[];
+  };
+}
+
+export function WhoWeAreHero({ data }: WhoWeAreHeroProps) {
+  if (!data) return null;
+
   return (
     <section className="w-full bg-white relative overflow-hidden">
       {/* Subtle background dot grid to match site style */}
@@ -18,31 +28,21 @@ export function WhoWeAreHero() {
         {/* Header - Simple and Above the Content */}
         <div className="text-center mb-16">
           <h2 className="text-[#15CEFF] text-[28px] font-medium tracking-tight">
-            Who we are!
+            {data.title}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text Content */}
           <div className="flex flex-col gap-6">
-            <p className="text-[#000000] text-[16px] font-normal leading-relaxed text-left max-w-[550px]">
-              At <span className="font-bold">THAAYAKAM LTD</span>, we embarked on our journey as <br />
-              a start-up in 2021, driven by a singular mission to <br />
-              provide a diverse range of high-tech solutions <br />
-              powered by emerging technologies. Our passionate <br />
-              tech enthusiasts are tightly-knit, constantly pushing <br />
-              the boundaries of modern technology to unravel <br />
-              intricate real-world challenges. With a crew dedicated <br />
-              to scaling new heights, we deliver unwavering <br />
-              commitment along with high-quality solutions and services. <br />
-              Our journey propels us into the information age, where we're <br />
-              creating digitised realms at lightning speed. <br />
-              THAAYAKAM LTD stands poised to lead us into an era <br />
-              abounding with innovation.
-            </p>
+            <div className="text-[#000000] text-[16px] font-normal leading-relaxed text-left max-w-[550px] space-y-4">
+              {data.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
           </div>
 
-          {/* Hexagonal Illustration - Resized to suit the text */}
+          {/* Hexagonal Illustration */}
           <div className="relative w-full h-full flex items-center justify-center">
             <div className="relative w-full max-w-[550px] h-[495px] flex items-center justify-center">
               <svg

@@ -2,7 +2,16 @@
 
 import React from "react";
 
-export function CareersHero() {
+interface CareersHeroProps {
+  data?: {
+    title: string;
+    paragraphs: string[];
+  };
+}
+
+export function CareersHero({ data }: CareersHeroProps) {
+  if (!data) return null;
+
   return (
     <section className="relative w-full bg-white bg-opacity-95 overflow-hidden py-12 lg:py-20">
       {/* Background dot grid */}
@@ -17,26 +26,17 @@ export function CareersHero() {
       <div className="max-w-[1280px] mx-auto px-6 relative z-10">
         <div className="flex flex-col items-center mb-12">
            <h2 className="text-[#15CEFF] text-[28px] font-medium tracking-tight text-center">
-             Embark on a journey of excellence ⚡
+             {data.title}
            </h2>
         </div>
 
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-24">
-          {/* Text content - CLONED FROM WhoWeAreHero */}
+          {/* Text content */}
           <div className="flex-1 text-center lg:text-left space-y-6 max-w-[650px]">
             <div className="text-black text-[18px] leading-[1.6] font-normal space-y-6">
-              <p>
-                We are an enterprising startup driven by a team of dedicated professionals. 
-                Our commitment lies in delivering an array of comprehensive services to our esteemed clients.
-              </p>
-              <p>
-                In line with this vision, we are actively seeking individuals who share our passion for technology, 
-                thrive in learning novel concepts, and exhibit exceptional logical thinking and problem-solving acumen. 
-                If you believe you align with our organizational ethos, kindly submit your resume.
-              </p>
-              <p>
-                Our meticulous selection process entails multiple stages to ensure the right fit for both you and us.
-              </p>
+              {data.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
             </div>
           </div>
 

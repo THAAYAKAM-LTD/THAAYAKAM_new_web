@@ -106,5 +106,110 @@
         "line4": "We are committed to guiding your journey to new heights."
       }
     }
+  },
+  "serviceDetails": {
+    "web": {
+      "title": "Web Application Development",
+      "subtitle": "Elevate Your Online Presence with Bespoke Web Solutions 🚀",
+      "paragraphs": [
+        "Welcome to the space of web application development 🌐! Our expert team specialises in crafting cutting-edge, tailor-made web solutions that empower your digital journey. We blend innovation, technology, and creativity to shape web experiences that captivate and convert. Let's embark on a transformational journey to redefine your online presence 🚀!"
+      ],
+      "cta": "Schedule a consultation 📅",
+      "illustration": "/service/Group 601.svg",
+      "sections": [
+        {
+          "id": "full-stack",
+          "type": "feature-list",
+          "title": "Full-Stack Expertise",
+          "description": "Explore our Full-Stack Expertise 💻! We're masters of both front-end and back-end technologies, ensuring a seamless, feature-rich, and dynamic web experience. From user interfaces to server architecture, we've got it all covered 🌟.",
+          "illustration": "/service/undraw_website_builder_re_ii6e 1.svg",
+          "items": [
+            {
+              "title": "Front-End Development",
+              "description": "Expertise in HTML, CSS, and JavaScript for creating responsive and visually engaging user interfaces."
+            },
+            {
+              "title": "Back-End Development",
+              "description": "Proficiency in server-side languages like Python, .NET, Laravel-PHP, Node.js, and database management."
+            },
+            {
+              "title": "API Integration",
+              "description": "Seamless integration of third-party APIs, enhancing functionality and interactivity."
+            }
+          ]
+        },
+        {
+          "id": "tailored-api",
+          "type": "feature-list",
+          "title": "Tailored API Solutions",
+          "description": "Discover our Tailored API Solutions 🛠️! We engineer custom APIs that seamlessly connect your web applications to external services, enhancing functionality and data flow. Say goodbye to one-size-fits-all solutions and embrace the power of customisation 🚀.",
+          "illustration": "/service/undraw_product_iteration_kjok 1.svg",
+          "items": [
+            {
+              "title": "Custom API Development",
+              "description": "We craft bespoke APIs tailored to your application's unique needs, ensuring efficient and secure data exchange."
+            },
+            {
+              "title": "Third-Party Integration",
+              "description": "Seamlessly connect your web apps with external services, such as payment gateways, social media platforms, and more."
+            },
+            {
+              "title": "Enhanced Functionality",
+              "description": "Our API solutions enhance your apps with advanced features, scalability, and improved data flow, providing a competitive edge."
+            }
+          ]
+        },
+        {
+          "id": "ongoing-maintenance",
+          "type": "feature-list",
+          "title": "Ongoing Maintenance",
+          "description": "Stay ahead with Ongoing Maintenance 🧰! We're committed to keeping your web app in peak condition. Our proactive maintenance ensures performance optimisation, security updates, and a smooth user experience. It's the secret to sustained online success 📈.",
+          "illustration": "/service/undraw_website_builder_re_ii6e 1.svg",
+          "items": [
+            {
+              "title": "Proactive Performance Optimisation",
+              "description": "We continuously fine-tune your web app's performance, optimising load times and responsiveness."
+            },
+            {
+              "title": "Security Patch Management",
+              "description": "Our team diligently applies security updates and patches to safeguard your app against emerging threats."
+            },
+            {
+              "title": "User Experience Refinement",
+              "description": "We focus on enhancing the user interface and experience, ensuring seamless navigation and customer satisfaction."
+            }
+          ]
+        },
+        {
+          "id": "why-choose-us",
+          "type": "grid-features",
+          "title": "Why Choose Us ⭐?",
+          "subtitle": "Choose Us for a Web Revolution 🌐!",
+          "items": [
+            {
+              "title": "Technical Expertise ⚡",
+              "description": "Our team boasts a wealth of technical knowledge and experience."
+            },
+            {
+              "title": "User-Centric Approach 👥",
+              "description": "User experience is our top priority, delivering engaging web applications."
+            },
+            {
+              "title": "Innovation Hub 💡",
+              "description": "We're constantly exploring the latest tech trends to offer innovative solutions."
+            },
+            {
+              "title": "Flexible Collaboration 🔄",
+              "description": "We adapt to your needs, offering flexible, agile development."
+            }
+          ],
+          "cta": "Schedule a consultation 📅"
+        },
+        {
+          "id": "how-we-do",
+          "type": "process"
+        }
+      ]
+    }
   }
 }

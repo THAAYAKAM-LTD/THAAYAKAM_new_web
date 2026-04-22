@@ -27,7 +27,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Paintbrush: <Paintbrush size={30} strokeWidth={1.5} />,
 };
 
-const ServiceCard = ({ icon, title, description, features }: any) => (
+const ServiceCard = ({ id, icon, title, description, features }: any) => (
   <div className="relative bg-white rounded-[32px] border border-gray-100 shadow-[0px_10px_40px_rgba(0,0,0,0.04)] p-10 flex flex-col gap-6 h-full group hover:shadow-cyan-400/10 hover:-translate-y-1 transition-all duration-500 overflow-hidden">
     {/* Title + Icon row */}
     <div className="flex items-start justify-between gap-4 z-20">
@@ -55,10 +55,12 @@ const ServiceCard = ({ icon, title, description, features }: any) => (
 
     {/* Explore link - Bottom Right */}
     <div className="flex justify-end mt-6 z-20">
-      <button className="text-[#00D084] text-[17px] font-semibold hover:translate-x-1 transition-all flex items-center gap-1 group/btn">
-        Explore
-        <span className="opacity-0 group-hover/btn:opacity-100 transition-opacity ml-1">→</span>
-      </button>
+      <Link href={`/services/${id}`}>
+        <button className="text-[#00D084] text-[17px] font-semibold hover:translate-x-1 transition-all flex items-center gap-1 group/btn">
+          Explore
+          <span className="opacity-0 group-hover/btn:opacity-100 transition-opacity ml-1">→</span>
+        </button>
+      </Link>
     </div>
   </div>
 );

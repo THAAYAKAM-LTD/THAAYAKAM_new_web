@@ -9,3 +9,8 @@ export async function getPageContent(pageName: string) {
   const content = await getContent();
   return content?.pages[pageName] || null;
 }
+
+export async function getServiceDetail(id: string) {
+  const content = await getContent();
+  return content?.serviceDetails?.[id] || null;
+}

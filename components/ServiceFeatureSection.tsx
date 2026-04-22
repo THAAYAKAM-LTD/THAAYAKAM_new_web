@@ -25,7 +25,7 @@ export function ServiceFeatureSection({ data }: ServiceFeatureSectionProps) {
           
           {/* Top: Title & Description */}
           <div className="flex flex-col gap-[19px]">
-            <h3 className="text-[#15CEFF] text-[20px] font-semibold tracking-tight max-w-[240px]">
+            <h3 className="text-[#15CEFF] text-[20px] font-semibold tracking-tight">
               {data.title}
             </h3>
             <p className="text-[#000000] text-[16px] leading-relaxed max-w-[951px]">

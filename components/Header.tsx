@@ -25,7 +25,7 @@ export function Header() {
             Home
           </Link>
           <Link 
-            href="/#portfolio" 
+            href="/portfolio" 
             className="text-brand-dark font-semibold text-sm tracking-wider uppercase hover:text-brand-primary transition-colors"
           >
             Portfolio

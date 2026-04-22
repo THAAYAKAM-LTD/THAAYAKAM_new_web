@@ -2,7 +2,7 @@
 
 import React from "react";
 import { 
-  SiReact, SiPython, SiDocker, SiAmazonwebservices, SiNextdotjs, SiFigma,
+  SiReact, SiPython, SiDocker, SiAws, SiNextdotjs, SiFigma,
   SiLaravel, SiMicrosoftazure, SiMicrosoftsqlserver, SiSquarespace,
   SiFlutter, SiDotnet, SiShopify, SiWebflow 
 } from "react-icons/si";
@@ -14,7 +14,7 @@ const INNER_TECH = [
   { Icon: SiReact, label: "React", color: "#61DAFB" },
   { Icon: SiPython, label: "Python", color: "#3776AB" },
   { Icon: SiDocker, label: "Docker", color: "#2496ED" },
-  { Icon: SiAmazonwebservices, label: "AWS", color: "#FF9900" },
+  { Icon: SiAws, label: "AWS", color: "#FF9900" },
   { Icon: SiNextdotjs, label: "Next.js", color: "#000000" },
   { Icon: SiFigma, label: "Figma", color: "#F24E1E" },
 ];

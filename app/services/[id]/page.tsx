@@ -4,6 +4,7 @@ import { ServiceHero } from "@/components/ServiceHero";
 import { ServiceFeatureSection } from "@/components/ServiceFeatureSection";
 import { ServiceGridSection } from "@/components/ServiceGridSection";
 import { HowWeDo } from "@/components/HowWeDo";
+import { MissionStatsCTA } from "@/components/MissionStatsCTA";
 import { getServiceDetail } from "@/lib/content";
 import { notFound } from "next/navigation";
 
@@ -47,6 +48,9 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
           }
           if (section.type === "process") {
             return <HowWeDo key={section.id} />;
+          }
+          if (section.type === "stats") {
+            return <MissionStatsCTA key={section.id} showButtons={false} />;
           }
           return null;
         })}

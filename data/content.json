@@ -208,6 +208,10 @@
         {
           "id": "how-we-do",
           "type": "process"
+        },
+        {
+          "id": "mission-stats",
+          "type": "stats"
         }
       ]
     }

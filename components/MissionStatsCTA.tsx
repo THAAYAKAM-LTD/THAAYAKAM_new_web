@@ -3,7 +3,7 @@
 import React from "react";
 import { MoveRight } from "lucide-react";
 
-export function MissionStatsCTA() {
+export function MissionStatsCTA({ showButtons = true }: { showButtons?: boolean }) {
   return (
     <section className="w-full bg-[#15CEFF] py-16 md:py-20 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6">
@@ -33,22 +33,24 @@ export function MissionStatsCTA() {
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <a 
-            href="/services" 
-            className="w-full sm:w-auto px-14 py-3 bg-white text-[#15CEFF] font-bold text-lg rounded-[10px] 
-            hover:bg-slate-50 transition-all shadow-xl hover:shadow-cyan-400/20 flex items-center justify-center gap-2 group"
-          >
-            Services 💻
-          </a>
-          <a 
-            href="/contact" 
-            className="w-full sm:w-auto px-14 py-3 bg-transparent border-2 border-white text-white font-bold text-lg rounded-[10px] 
-            hover:bg-white/10 transition-all flex items-center justify-center gap-2"
-          >
-            Schedule a consultation 📅
-          </a>
-        </div>
+        {showButtons && (
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <a 
+              href="/services" 
+              className="w-full sm:w-auto px-14 py-3 bg-white text-[#15CEFF] font-bold text-lg rounded-[10px] 
+              hover:bg-slate-50 transition-all shadow-xl hover:shadow-cyan-400/20 flex items-center justify-center gap-2 group"
+            >
+              Services 💻
+            </a>
+            <a 
+              href="/contact" 
+              className="w-full sm:w-auto px-14 py-3 bg-transparent border-2 border-white text-white font-bold text-lg rounded-[10px] 
+              hover:bg-white/10 transition-all flex items-center justify-center gap-2"
+            >
+              Schedule a consultation 📅
+            </a>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -45,7 +45,7 @@ export function ContactHero() {
             </p>
             <div className="mt-auto">
               <Button 
-                variant="ghost" 
+                variant="button-ghost" 
                 className="w-[224px] h-[40px] rounded-xl text-[14px] font-bold bg-[#15CEFF] border-0 text-white hover:bg-[#00acc1] transition-all flex items-center justify-center gap-2 p-0"
               >
                 Reach via WhatsApp 💬

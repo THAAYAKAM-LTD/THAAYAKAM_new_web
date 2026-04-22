@@ -58,12 +58,59 @@ export function ServiceFeatureSection({ data }: ServiceFeatureSectionProps) {
 
             {/* Right Column: Illustration Square Shape */}
             <div className="relative flex items-center justify-center lg:justify-end">
-              <div className="relative w-[256px] h-[256px] rounded-2xl border-2 border-dashed border-[#15CEFF] flex items-center justify-center overflow-hidden bg-white shadow-lg">
-                <img 
-                  src={data.illustration} 
-                  alt={data.title}
-                  className="w-full h-full object-contain p-6"
-                />
+              <div className="relative w-[256px] h-[256px] flex items-center justify-center">
+                <svg
+                  viewBox="0 0 100 100"
+                  className="absolute inset-0 w-full h-full"
+                  aria-hidden="true"
+                >
+                  <style>
+                    {`
+                      @keyframes marching-ants-square {
+                        from { stroke-dashoffset: 0; }
+                        to { stroke-dashoffset: 12; }
+                      }
+                      .animate-marching-ants-square {
+                        stroke-dasharray: 6 6;
+                        animation: marching-ants-square 1.5s linear infinite;
+                      }
+                    `}
+                  </style>
+                  {/* Outer Solid Rounded Square */}
+                  <rect
+                    x="2"
+                    y="2"
+                    width="96"
+                    height="96"
+                    rx="12"
+                    fill="white"
+                    stroke="#E5E7EB"
+                    strokeWidth="1"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                  {/* Animated Dashed Rounded Square */}
+                  <rect
+                    x="2"
+                    y="2"
+                    width="96"
+                    height="96"
+                    rx="12"
+                    fill="none"
+                    stroke="#15CEFF"
+                    strokeWidth="2"
+                    vectorEffect="non-scaling-stroke"
+                    className="animate-marching-ants-square"
+                  />
+                </svg>
+                
+                {/* Illustration */}
+                <div className="relative z-10 w-full h-full flex items-center justify-center overflow-hidden rounded-2xl">
+                  <img 
+                    src={data.illustration} 
+                    alt={data.title}
+                    className="w-full h-full object-contain p-6"
+                  />
+                </div>
               </div>
             </div>
 

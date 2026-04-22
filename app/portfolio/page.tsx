@@ -22,26 +22,26 @@ export default async function PortfolioPage() {
       <main className="flex-grow w-full flex flex-col pt-12 gap-20 bg-white">
         
         {/* Page Header */}
-        <div className="max-w-[1280px] mx-auto px-6 text-center space-y-8">
-          <h1 className="text-[#15CEFF] text-[32px] font-semibold tracking-tight">
+        <div className="max-w-[1280px] mx-auto px-6 text-center space-y-4">
+          <h1 className="text-[#15CEFF] text-[28px] font-normal tracking-tight">
             {page.title}
           </h1>
-          <p className="text-[#000000] text-[20px] font-semibold max-w-[800px] mx-auto leading-relaxed">
+          <p className="text-black text-[20px] font-semibold max-w-[620px] mx-auto leading-relaxed">
             {page.subtitle}
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="max-w-[1280px] mx-auto px-6 w-full">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="max-w-[1072px] mx-auto px-6 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 justify-items-center">
             {items.map((item: any) => (
               <Link 
                 key={item.id} 
                 href={`/portfolio/${item.id}`}
-                className="group flex flex-col bg-white rounded-[32px] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                className="group flex flex-col w-full max-w-[512px] h-[537px] bg-white rounded-[20px] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
                 {/* Image Placeholder/Thumbnail */}
-                <div className="relative aspect-[4/3] bg-[#E0F7FF] flex items-center justify-center overflow-hidden">
+                <div className="relative w-full h-[336px] bg-[#E0F7FF] flex items-center justify-center overflow-hidden rounded-[20px]">
                   {item.thumbnail ? (
                     <img 
                       src={item.thumbnail} 
@@ -56,23 +56,20 @@ export default async function PortfolioPage() {
                 </div>
 
                 {/* Content Area */}
-                <div className="p-10 flex flex-col gap-4">
-                  <div className="text-[#15CEFF] text-[16px] font-medium tracking-tight">
-                    {item.category}
-                  </div>
-                  <h3 className="text-[#15CEFF] text-[22px] font-bold">
+                <div className="p-8 flex flex-col gap-3">
+                  <h3 className="text-[#15CEFF] text-[20px] font-normal tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="text-black text-[16px] font-bold leading-relaxed mb-4">
+                  <div className="text-black text-[16px] font-normal">
+                    {item.category}
+                  </div>
+                  <p className="text-black text-[18px] font-bold leading-snug">
                     {item.shortDescription}
                   </p>
                   
                   {/* Meta: Country */}
-                  <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between text-gray-500 text-sm">
-                    <span className="font-medium">{item.country}</span>
-                    <span className="text-[#00D084] font-bold group-hover:translate-x-1 transition-transform">
-                      Explore case study →
-                    </span>
+                  <div className="mt-auto pt-2 flex items-center text-black text-[16px]">
+                    <span className="font-normal">{item.country}</span>
                   </div>
                 </div>
               </Link>

@@ -14,7 +14,9 @@ import {
   CheckCircle2, 
   AlertCircle,
   Loader2,
-  ChevronRight
+  ChevronRight,
+  Image as ImageIcon,
+  Paintbrush
 } from "lucide-react";
 import Link from "next/link";
 
@@ -24,6 +26,9 @@ export default function AdminDashboard() {
   const [saving, setSaving] = useState(false);
   const [activeTab, setActiveTab] = useState("home");
   const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [uploadingField, setUploadingField] = useState<string | null>(null);
+  const [serviceInputs, setServiceInputs] = useState<Record<string, string>>({});
+  const [featureInputs, setFeatureInputs] = useState<Record<string, string>>({});
   const router = useRouter();
 
   useEffect(() => {
@@ -114,6 +119,111 @@ export default function AdminDashboard() {
     }));
   };
 
+  const updatePortfolioItem = (id: string, field: string, value: any) => {
+    setContent((prev: any) => ({
+      ...prev,
+      portfolioItems: (prev.portfolioItems || []).map((item: any) => 
+        item.id === id ? { ...item, [field]: value } : item
+      )
+    }));
+  };
+
+  const addOfferedService = (itemId: string) => {
+    const newVal = serviceInputs[itemId]?.trim();
+    if (!newVal) return;
+    
+    setContent((prev: any) => ({
+      ...prev,
+      portfolioItems: prev.portfolioItems.map((item: any) => 
+        item.id === itemId 
+          ? { ...item, offeredServices: [...(item.offeredServices || []), newVal] }
+          : item
+      )
+    }));
+    
+    setServiceInputs(prev => ({ ...prev, [itemId]: "" }));
+  };
+
+  const removeOfferedService = (itemId: string, serviceToRemove: string) => {
+    setContent((prev: any) => ({
+      ...prev,
+      portfolioItems: prev.portfolioItems.map((item: any) => 
+        item.id === itemId 
+          ? { ...item, offeredServices: (item.offeredServices || []).filter((s: string) => s !== serviceToRemove) }
+          : item
+      )
+    }));
+  };
+
+  const addKeyFeature = (itemId: string) => {
+    const newVal = featureInputs[itemId]?.trim();
+    if (!newVal) return;
+    
+    setContent((prev: any) => ({
+      ...prev,
+      portfolioItems: prev.portfolioItems.map((item: any) => 
+        item.id === itemId 
+          ? { 
+              ...item, 
+              keyFeatures: { 
+                ...item.keyFeatures, 
+                items: [...(item.keyFeatures.items || []), { title: newVal, description: "" }] 
+              } 
+            }
+          : item
+      )
+    }));
+    
+    setFeatureInputs(prev => ({ ...prev, [itemId]: "" }));
+  };
+
+  const removeKeyFeature = (itemId: string, featureTitleToRemove: string) => {
+    setContent((prev: any) => ({
+      ...prev,
+      portfolioItems: prev.portfolioItems.map((item: any) => 
+        item.id === itemId 
+          ? { 
+              ...item, 
+              keyFeatures: { 
+                ...item.keyFeatures, 
+                items: (item.keyFeatures.items || []).filter((f: any) => f.title !== featureTitleToRemove) 
+              } 
+            }
+          : item
+      )
+    }));
+  };
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, onUploadSuccess: (url: string) => void, fieldId: string) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadingField(fieldId);
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        onUploadSuccess(data.url);
+        setStatus({ type: "success", message: "Image uploaded successfully! ✨" });
+        setTimeout(() => setStatus(null), 3000);
+      } else {
+        throw new Error("Upload failed");
+      }
+    } catch (err) {
+      console.error("Upload error:", err);
+      setStatus({ type: "error", message: "Failed to upload image. Please try again." });
+    } finally {
+      setUploadingField(null);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#F8FAFC] flex">
       {/* Sidebar */}
@@ -157,6 +267,20 @@ export default function AdminDashboard() {
           >
             <Settings size={20} />
             <span className="font-semibold text-sm">Services Grid</span>
+          </button>
+          <button 
+            onClick={() => setActiveTab("portfolio")}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeTab === "portfolio" ? "bg-cyan-50 text-[#15CEFF] shadow-sm" : "text-gray-500 hover:bg-gray-50"}`}
+          >
+            <Briefcase size={20} />
+            <span className="font-semibold text-sm">Portfolio Hub</span>
+          </button>
+          <button 
+            onClick={() => setActiveTab("brandDetail")}
+            className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${activeTab === "brandDetail" ? "bg-cyan-50 text-[#15CEFF] shadow-sm" : "text-gray-500 hover:bg-gray-50"}`}
+          >
+            <Paintbrush size={20} />
+            <span className="font-semibold text-sm">Brand Design Page</span>
           </button>
         </nav>
 
@@ -435,6 +559,613 @@ export default function AdminDashboard() {
                   </div>
                   <span className="font-bold text-gray-400 group-hover:text-[#15CEFF] transition-colors">Add New Service Pillar</span>
                 </button>
+              </div>
+            </div>
+          )}
+
+          {/* PORTFOLIO MANAGER */}
+          {activeTab === "portfolio" && (
+            <div className="space-y-8 pb-12">
+              <div className="bg-white rounded-[32px] border border-gray-100 shadow-sm p-8 space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-6 bg-[#15CEFF] rounded-full" />
+                  <h2 className="text-xl font-bold text-gray-900 tracking-tight">Portfolio Page Header</h2>
+                </div>
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="space-y-2 text-left">
+                    <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Page Title</label>
+                    <input 
+                      type="text" 
+                      value={content.portfolioPage?.title || ""}
+                      onChange={(e) => setContent((prev: any) => ({
+                        ...prev,
+                        portfolioPage: { ...prev.portfolioPage, title: e.target.value }
+                      }))}
+                      className="w-full bg-gray-50 border border-gray-100 rounded-2xl p-4 font-bold text-[22px] text-[#15CEFF] focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                    />
+                  </div>
+                  <div className="space-y-2 text-left">
+                    <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Page Subtitle</label>
+                    <textarea 
+                      rows={3}
+                      value={content.portfolioPage?.subtitle || ""}
+                      onChange={(e) => setContent((prev: any) => ({
+                        ...prev,
+                        portfolioPage: { ...prev.portfolioPage, subtitle: e.target.value }
+                      }))}
+                      className="w-full bg-gray-50 border border-gray-100 rounded-2xl p-4 font-semibold text-gray-800 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-8">
+                {(content.portfolioItems || []).map((item: any, idx: number) => (
+                  <div key={item.id} className="bg-white rounded-[32px] border border-gray-100 shadow-sm p-8 group relative flex flex-col gap-8">
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="px-4 py-1.5 bg-cyan-50 text-[#15CEFF] rounded-full text-[10px] font-bold uppercase tracking-widest">
+                          Project #{idx + 1}
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
+                      </div>
+                      <button 
+                        onClick={() => {
+                          if(confirm("Are you sure you want to delete this case study?")) {
+                            setContent((prev: any) => ({
+                              ...prev,
+                              portfolioItems: prev.portfolioItems.filter((i: any) => i.id !== item.id)
+                            }));
+                          }
+                        }}
+                        className="text-gray-300 hover:text-red-500 transition-colors"
+                      >
+                        <Trash2 size={24} />
+                      </button>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                      <div className="space-y-6">
+                        <div className="space-y-1 text-left">
+                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Project Title</label>
+                          <input 
+                            type="text" 
+                            value={item.title}
+                            onChange={(e) => updatePortfolioItem(item.id, "title", e.target.value)}
+                            className="w-full bg-gray-50 border border-gray-100 rounded-xl p-3 font-bold text-lg text-gray-800 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                          />
+                        </div>
+                        <div className="space-y-1 text-left">
+                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Country</label>
+                          <input 
+                            type="text" 
+                            value={item.country}
+                            placeholder="e.g. United Kingdom 🇬🇧"
+                            onChange={(e) => updatePortfolioItem(item.id, "country", e.target.value)}
+                            className="w-full bg-gray-50 border border-gray-100 rounded-xl p-3 font-semibold text-gray-700 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                          />
+                        </div>
+                        <div className="space-y-1 text-left">
+                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Category</label>
+                          <input 
+                            type="text" 
+                            value={item.category}
+                            onChange={(e) => updatePortfolioItem(item.id, "category", e.target.value)}
+                            className="w-full bg-gray-50 border border-gray-100 rounded-xl p-3 font-semibold text-gray-700 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                          />
+                        </div>
+                        <div className="space-y-1 text-left">
+                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Short Description (Subtitle)</label>
+                          <textarea 
+                            rows={2}
+                            value={item.shortDescription}
+                            placeholder="Briefly describe the project..."
+                            onChange={(e) => updatePortfolioItem(item.id, "shortDescription", e.target.value)}
+                            className="w-full bg-gray-50 border border-gray-100 rounded-xl p-3 text-sm text-gray-700 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                          />
+                        </div>
+
+                        <div className="space-y-4 text-left">
+                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Offered Services</label>
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {(item.offeredServices || []).map((service: string, sIdx: number) => (
+                              <span key={sIdx} className="inline-flex items-center gap-1.5 px-3 py-1 bg-cyan-50 text-[#15CEFF] text-[12px] font-bold rounded-full border border-cyan-100 group/tag">
+                                {service}
+                                <button 
+                                  onClick={() => removeOfferedService(item.id, service)}
+                                  className="text-[#15CEFF] hover:text-red-500 transition-colors"
+                                >
+                                  <Plus size={12} className="rotate-45" />
+                                </button>
+                              </span>
+                            ))}
+                          </div>
+                          <div className="flex gap-2">
+                            <input 
+                              type="text" 
+                              value={serviceInputs[item.id] || ""}
+                              placeholder="Add a service (e.g. UI / UX Design)"
+                              onChange={(e) => setServiceInputs(prev => ({ ...prev, [item.id]: e.target.value }))}
+                              onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), addOfferedService(item.id))}
+                              className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-3 text-sm text-gray-800 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                            />
+                            <button 
+                              onClick={() => addOfferedService(item.id)}
+                              className="px-4 bg-gray-50 text-gray-400 hover:text-[#15CEFF] hover:bg-[#15CEFF]/5 rounded-xl border border-gray-100 transition-all font-bold text-sm"
+                            >
+                              Add
+                            </button>
+                          </div>
+                        </div>
+
+                        <div className="space-y-1 text-left">
+                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Thumbnail Image</label>
+                          <div className="flex gap-2">
+                            <input 
+                              type="text" 
+                              value={item.thumbnail}
+                              placeholder="/portfolio/thumbnail.svg"
+                              onChange={(e) => updatePortfolioItem(item.id, "thumbnail", e.target.value)}
+                              className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-3 font-mono text-sm text-[#22C55E] focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                            />
+                            <div className="relative">
+                              <input 
+                                type="file" 
+                                id={`thumbnail-upload-${item.id}`}
+                                className="hidden" 
+                                accept="image/*"
+                                onChange={(e) => handleImageUpload(e, (url) => updatePortfolioItem(item.id, "thumbnail", url), `thumbnail-${item.id}`)}
+                              />
+                              <label 
+                                htmlFor={`thumbnail-upload-${item.id}`}
+                                className={`h-full aspect-square flex items-center justify-center rounded-xl border border-gray-100 cursor-pointer transition-all ${uploadingField === `thumbnail-${item.id}` ? "bg-gray-100 animate-pulse" : "bg-white hover:bg-gray-50 text-gray-400 hover:text-[#15CEFF]"}`}
+                              >
+                                {uploadingField === `thumbnail-${item.id}` ? <Loader2 size={18} className="animate-spin" /> : <Plus size={18} />}
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="space-y-1 text-left">
+                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Main Hero Image</label>
+                          <div className="flex gap-2">
+                            <input 
+                              type="text" 
+                              value={item.heroImage}
+                              placeholder="/portfolio/project-hero.svg"
+                              onChange={(e) => updatePortfolioItem(item.id, "heroImage", e.target.value)}
+                              className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-3 font-mono text-sm text-[#22C55E] focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                            />
+                            <div className="relative">
+                              <input 
+                                type="file" 
+                                id={`hero-upload-${item.id}`}
+                                className="hidden" 
+                                accept="image/*"
+                                onChange={(e) => handleImageUpload(e, (url) => updatePortfolioItem(item.id, "heroImage", url), `hero-${item.id}`)}
+                              />
+                              <label 
+                                htmlFor={`hero-upload-${item.id}`}
+                                className={`h-full aspect-square flex items-center justify-center rounded-xl border border-gray-100 cursor-pointer transition-all ${uploadingField === `hero-${item.id}` ? "bg-gray-100 animate-pulse" : "bg-white hover:bg-gray-50 text-gray-400 hover:text-[#15CEFF]"}`}
+                              >
+                                {uploadingField === `hero-${item.id}` ? <Loader2 size={18} className="animate-spin" /> : <Plus size={18} />}
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="space-y-6">
+                        <div className="space-y-1 text-left">
+                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Introduction Image</label>
+                          <div className="flex gap-2">
+                            <input 
+                              type="text" 
+                              value={item.introduction.image}
+                              placeholder="/portfolio/intro.svg"
+                              onChange={(e) => {
+                                const newIntro = { ...item.introduction, image: e.target.value };
+                                updatePortfolioItem(item.id, "introduction", newIntro);
+                              }}
+                              className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-3 font-mono text-sm text-[#22C55E] focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                            />
+                            <div className="relative">
+                              <input 
+                                type="file" 
+                                id={`intro-upload-${item.id}`}
+                                className="hidden" 
+                                accept="image/*"
+                                onChange={(e) => handleImageUpload(e, (url) => {
+                                  const newIntro = { ...item.introduction, image: url };
+                                  updatePortfolioItem(item.id, "introduction", newIntro);
+                                }, `intro-${item.id}`)}
+                              />
+                              <label 
+                                htmlFor={`intro-upload-${item.id}`}
+                                className={`h-full aspect-square flex items-center justify-center rounded-xl border border-gray-100 cursor-pointer transition-all ${uploadingField === `intro-${item.id}` ? "bg-gray-100 animate-pulse" : "bg-white hover:bg-gray-50 text-gray-400 hover:text-[#15CEFF]"}`}
+                              >
+                                {uploadingField === `intro-${item.id}` ? <Loader2 size={18} className="animate-spin" /> : <Plus size={18} />}
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div className="space-y-1 text-left">
+                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Introduction (HTML)</label>
+                          <textarea 
+                            rows={8}
+                            value={item.introduction.text}
+                            onChange={(e) => {
+                              const newIntro = { ...item.introduction, text: e.target.value };
+                              updatePortfolioItem(item.id, "introduction", newIntro);
+                            }}
+                            className="w-full bg-gray-50 border border-gray-100 rounded-xl p-3 text-sm text-gray-600 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-6 pt-8 border-t border-gray-50">
+                      <div className="space-y-1 text-left">
+                        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Key Features Illustration</label>
+                        <div className="flex gap-2">
+                          <input 
+                            type="text" 
+                            value={item.keyFeatures.image}
+                            placeholder="/portfolio/features.svg"
+                            onChange={(e) => {
+                              const newFeatures = { ...item.keyFeatures, image: e.target.value };
+                              updatePortfolioItem(item.id, "keyFeatures", newFeatures);
+                            }}
+                            className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-3 font-mono text-sm text-[#22C55E] focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                          />
+                          <div className="relative">
+                            <input 
+                              type="file" 
+                              id={`features-upload-${item.id}`}
+                              className="hidden" 
+                              accept="image/*"
+                              onChange={(e) => handleImageUpload(e, (url) => {
+                                const newFeatures = { ...item.keyFeatures, image: url };
+                                updatePortfolioItem(item.id, "keyFeatures", newFeatures);
+                              }, `features-${item.id}`)}
+                            />
+                            <label 
+                              htmlFor={`features-upload-${item.id}`}
+                              className={`h-full aspect-square flex items-center justify-center rounded-xl border border-gray-100 cursor-pointer transition-all ${uploadingField === `features-${item.id}` ? "bg-gray-100 animate-pulse" : "bg-white hover:bg-gray-50 text-gray-400 hover:text-[#15CEFF]"}`}
+                            >
+                              {uploadingField === `features-${item.id}` ? <Loader2 size={18} className="animate-spin" /> : <Plus size={18} />}
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                        <div className="space-y-4 pt-4 border-t border-gray-50/50">
+                          <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Key Features (Points)</label>
+                          <div className="grid grid-cols-1 gap-4">
+                            {(item.keyFeatures.items || []).map((feature: any, fIdx: number) => (
+                              <div key={fIdx} className="space-y-3 p-4 bg-gray-50 rounded-2xl border border-gray-100 group relative">
+                                <button 
+                                  onClick={() => removeKeyFeature(item.id, feature.title)}
+                                  className="absolute top-3 right-3 text-gray-300 hover:text-red-500 transition-colors"
+                                >
+                                  <Trash2 size={16} />
+                                </button>
+                                <div className="space-y-1">
+                                  <label className="text-[8px] font-bold text-gray-400 uppercase">Feature Title</label>
+                                  <input 
+                                    type="text"
+                                    value={feature.title}
+                                    onChange={(e) => {
+                                      const newItems = [...item.keyFeatures.items];
+                                      newItems[fIdx] = { ...newItems[fIdx], title: e.target.value };
+                                      const newFeatures = { ...item.keyFeatures, items: newItems };
+                                      updatePortfolioItem(item.id, "keyFeatures", newFeatures);
+                                    }}
+                                    className="w-full bg-white border border-gray-100 rounded-lg p-2 font-bold text-sm text-gray-800 outline-none focus:border-[#15CEFF]"
+                                  />
+                                </div>
+                                <div className="space-y-1">
+                                  <label className="text-[8px] font-bold text-gray-400 uppercase">Feature Description</label>
+                                  <textarea 
+                                    rows={2}
+                                    value={feature.description}
+                                    onChange={(e) => {
+                                      const newItems = [...item.keyFeatures.items];
+                                      newItems[fIdx] = { ...newItems[fIdx], description: e.target.value };
+                                      const newFeatures = { ...item.keyFeatures, items: newItems };
+                                      updatePortfolioItem(item.id, "keyFeatures", newFeatures);
+                                    }}
+                                    className="w-full bg-white border border-gray-100 rounded-lg p-2 text-[12px] text-gray-500 outline-none focus:border-[#15CEFF]"
+                                  />
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        <div className="flex gap-2">
+                          <input 
+                            type="text" 
+                            value={featureInputs[item.id] || ""}
+                            placeholder="Add a feature (e.g. Real-time notifications)"
+                            onChange={(e) => setFeatureInputs(prev => ({ ...prev, [item.id]: e.target.value }))}
+                            onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), addKeyFeature(item.id))}
+                            className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-3 text-sm text-gray-800 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                          />
+                          <button 
+                            onClick={() => addKeyFeature(item.id)}
+                            className="px-4 bg-gray-50 text-gray-400 hover:text-[#15CEFF] hover:bg-[#15CEFF]/5 rounded-xl border border-gray-100 transition-all font-bold text-sm"
+                          >
+                            Add
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-8 border-t border-gray-50">
+                      <div className="space-y-2 text-left">
+                        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Challenge</label>
+                        <textarea 
+                          rows={6}
+                          value={item.challenge}
+                          onChange={(e) => updatePortfolioItem(item.id, "challenge", e.target.value)}
+                          className="w-full bg-gray-50 border border-gray-100 rounded-xl p-4 text-sm text-gray-600 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                        />
+                      </div>
+                      <div className="space-y-2 text-left">
+                        <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Solution</label>
+                        <textarea 
+                          rows={6}
+                          value={item.solution}
+                          onChange={(e) => updatePortfolioItem(item.id, "solution", e.target.value)}
+                          className="w-full bg-gray-50 border border-gray-100 rounded-xl p-4 text-sm text-gray-600 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+                <button 
+                  onClick={() => {
+                    const newId = `project-${Date.now()}`;
+                    const newItem = {
+                      id: newId,
+                      title: "New Case Study",
+                      category: "Platform Development",
+                      shortDescription: "Enter intro pitch...",
+                      country: "United Kingdom 🇬🇧",
+                      thumbnail: "/portfolio/placeholder.svg",
+                      offeredServices: [],
+                      heroImage: "/portfolio/placeholder-hero.svg",
+                      introduction: { text: "Start story...", image: "/portfolio/placeholder-intro.svg" },
+                      keyFeatures: { items: [], image: "/portfolio/placeholder-features.svg" },
+                      challenge: "Hurdle...",
+                      solution: "Fix..."
+                    };
+                    setContent((prev: any) => ({
+                      ...prev,
+                      portfolioItems: [...(prev.portfolioItems || []), newItem]
+                    }));
+                  }}
+                  className="bg-white rounded-[32px] border-2 border-dashed border-gray-100 p-12 flex flex-col items-center justify-center gap-4 group hover:border-[#15CEFF]/30 transition-all hover:bg-cyan-50/20 shadow-sm"
+                >
+                  <div className="w-20 h-20 rounded-full bg-cyan-50 flex items-center justify-center text-[#15CEFF] group-hover:bg-[#15CEFF] group-hover:text-white transition-all shadow-sm group-hover:shadow-cyan-100">
+                    <Plus size={40} />
+                  </div>
+                  <span className="font-bold text-gray-400 group-hover:text-[#15CEFF] transition-colors text-lg uppercase tracking-widest">Add New Case Study</span>
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* BRAND DESIGN PAGE MANAGER */}
+          {activeTab === "brandDetail" && (
+            <div className="space-y-8 pb-12 text-left">
+              <div className="bg-white rounded-[32px] border border-gray-100 shadow-sm p-8 space-y-8 text-left">
+                <div className="flex items-center gap-3">
+                  <div className="w-1.5 h-6 bg-[#15CEFF] rounded-full" />
+                  <h2 className="text-xl font-bold text-gray-900 tracking-tight">Main Page Header</h2>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <div className="space-y-1">
+                      <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Main Heading</label>
+                      <input 
+                        type="text" 
+                        value={content.serviceDetails.brand.title}
+                        onChange={(e) => setContent((prev: any) => ({
+                          ...prev,
+                          serviceDetails: { ...prev.serviceDetails, brand: { ...prev.serviceDetails.brand, title: e.target.value } }
+                        }))}
+                        className="w-full bg-gray-50 border border-gray-100 rounded-xl p-4 font-bold text-xl text-[#15CEFF] focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Hero Illustration</label>
+                      <div className="flex gap-2">
+                        <input 
+                          type="text" 
+                          value={content.serviceDetails.brand.illustration}
+                          placeholder="/service/hero.svg"
+                          onChange={(e) => setContent((prev: any) => ({
+                            ...prev,
+                            serviceDetails: { ...prev.serviceDetails, brand: { ...prev.serviceDetails.brand, illustration: e.target.value } }
+                          }))}
+                          className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-3 font-mono text-sm text-[#22C55E] focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                        />
+                        <div className="relative">
+                          <input 
+                            type="file" 
+                            id="brand-hero-upload"
+                            className="hidden" 
+                            accept="image/*"
+                            onChange={(e) => handleImageUpload(e, (url) => setContent((prev: any) => ({
+                              ...prev,
+                              serviceDetails: { ...prev.serviceDetails, brand: { ...prev.serviceDetails.brand, illustration: url } }
+                            })), "brand-hero")}
+                          />
+                          <label 
+                            htmlFor="brand-hero-upload"
+                            className={`h-full aspect-square flex items-center justify-center rounded-xl border border-gray-100 cursor-pointer transition-all ${uploadingField === "brand-hero" ? "bg-gray-100 animate-pulse" : "bg-white hover:bg-gray-50 text-gray-400 hover:text-[#15CEFF]"}`}
+                          >
+                            {uploadingField === "brand-hero" ? <Loader2 size={18} className="animate-spin" /> : <Plus size={18} />}
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="space-y-1">
+                      <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Hero Paragraph</label>
+                      <textarea 
+                        rows={6}
+                        value={content.serviceDetails.brand.paragraphs[0]}
+                        onChange={(e) => {
+                          const newParams = [...content.serviceDetails.brand.paragraphs];
+                          newParams[0] = e.target.value;
+                          setContent((prev: any) => ({
+                            ...prev,
+                            serviceDetails: { ...prev.serviceDetails, brand: { ...prev.serviceDetails.brand, paragraphs: newParams } }
+                          }));
+                        }}
+                        className="w-full bg-gray-50 border border-gray-100 rounded-xl p-4 text-sm text-gray-600 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Sections Manager */}
+              <div className="space-y-6 text-left">
+                <div className="flex items-center gap-3 px-4">
+                  <div className="w-1.5 h-6 bg-[#15CEFF] rounded-full" />
+                  <h2 className="text-xl font-bold text-gray-900 tracking-tight">Content Sections</h2>
+                </div>
+                
+                <div className="grid grid-cols-1 gap-8">
+                  {content.serviceDetails.brand.sections.map((section: any, sIdx: number) => (
+                    section.type === "feature-list" && (
+                      <div key={section.id} className="bg-white rounded-[32px] border border-gray-100 shadow-sm p-8 group relative flex flex-col gap-8 text-left">
+                        <div className="flex items-center gap-4">
+                          <div className="px-4 py-1.5 bg-cyan-50 text-[#15CEFF] rounded-full text-[10px] font-bold uppercase tracking-widest">
+                            Section #{sIdx + 1}
+                          </div>
+                          <input 
+                            type="text"
+                            value={section.title}
+                            onChange={(e) => {
+                              const newSections = [...content.serviceDetails.brand.sections];
+                              newSections[sIdx] = { ...newSections[sIdx], title: e.target.value };
+                              setContent((prev: any) => ({
+                                ...prev,
+                                serviceDetails: { ...prev.serviceDetails, brand: { ...prev.serviceDetails.brand, sections: newSections } }
+                              }));
+                            }}
+                            className="text-xl font-bold text-gray-900 bg-transparent border-none outline-none focus:text-[#15CEFF]"
+                          />
+                        </div>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                          <div className="space-y-6">
+                            <div className="space-y-1">
+                              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Section Description</label>
+                              <textarea 
+                                rows={4}
+                                value={section.description}
+                                onChange={(e) => {
+                                  const newSections = [...content.serviceDetails.brand.sections];
+                                  newSections[sIdx] = { ...newSections[sIdx], description: e.target.value };
+                                  setContent((prev: any) => ({
+                                    ...prev,
+                                    serviceDetails: { ...prev.serviceDetails, brand: { ...prev.serviceDetails.brand, sections: newSections } }
+                                  }));
+                                }}
+                                className="w-full bg-gray-50 border border-gray-100 rounded-xl p-4 text-sm text-gray-600 focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                              />
+                            </div>
+                            <div className="space-y-1">
+                              <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Section Illustration</label>
+                              <div className="flex gap-2">
+                                <input 
+                                  type="text" 
+                                  value={section.illustration}
+                                  placeholder="/service/illustration.svg"
+                                  onChange={(e) => {
+                                    const newSections = [...content.serviceDetails.brand.sections];
+                                    newSections[sIdx] = { ...newSections[sIdx], illustration: e.target.value };
+                                    setContent((prev: any) => ({
+                                      ...prev,
+                                      serviceDetails: { ...prev.serviceDetails, brand: { ...prev.serviceDetails.brand, sections: newSections } }
+                                    }));
+                                  }}
+                                  className="flex-1 bg-gray-50 border border-gray-100 rounded-xl p-3 font-mono text-sm text-[#22C55E] focus:bg-white focus:border-[#15CEFF] outline-none transition-all"
+                                />
+                                <div className="relative">
+                                  <input 
+                                    type="file" 
+                                    id={`brand-section-upload-${sIdx}`}
+                                    className="hidden" 
+                                    accept="image/*"
+                                    onChange={(e) => handleImageUpload(e, (url) => {
+                                      const newSections = [...content.serviceDetails.brand.sections];
+                                      newSections[sIdx] = { ...newSections[sIdx], illustration: url };
+                                      setContent((prev: any) => ({
+                                        ...prev,
+                                        serviceDetails: { ...prev.serviceDetails, brand: { ...prev.serviceDetails.brand, sections: newSections } }
+                                      }));
+                                    }, `brand-section-${sIdx}`)}
+                                  />
+                                  <label 
+                                    htmlFor={`brand-section-upload-${sIdx}`}
+                                    className={`h-full aspect-square flex items-center justify-center rounded-xl border border-gray-100 cursor-pointer transition-all ${uploadingField === `brand-section-${sIdx}` ? "bg-gray-100 animate-pulse" : "bg-white hover:bg-gray-50 text-gray-400 hover:text-[#15CEFF]"}`}
+                                  >
+                                    {uploadingField === `brand-section-${sIdx}` ? <Loader2 size={18} className="animate-spin" /> : <Plus size={18} />}
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <div className="space-y-4">
+                            <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Bullets / Items</label>
+                            {section.items.map((item: any, iIdx: number) => (
+                              <div key={iIdx} className="space-y-2 p-4 bg-gray-50 rounded-2xl border border-gray-100">
+                                <input 
+                                  type="text"
+                                  value={item.title}
+                                  onChange={(e) => {
+                                    const newSections = [...content.serviceDetails.brand.sections];
+                                    newSections[sIdx].items[iIdx].title = e.target.value;
+                                    setContent((prev: any) => ({
+                                      ...prev,
+                                      serviceDetails: { ...prev.serviceDetails, brand: { ...prev.serviceDetails.brand, sections: newSections } }
+                                    }));
+                                  }}
+                                  className="w-full bg-white border border-gray-100 rounded-lg p-2 font-bold text-sm text-gray-800 outline-none focus:border-[#15CEFF]"
+                                />
+                                <textarea 
+                                  rows={2}
+                                  value={item.description}
+                                  onChange={(e) => {
+                                    const newSections = [...content.serviceDetails.brand.sections];
+                                    newSections[sIdx].items[iIdx].description = e.target.value;
+                                    setContent((prev: any) => ({
+                                      ...prev,
+                                      serviceDetails: { ...prev.serviceDetails, brand: { ...prev.serviceDetails.brand, sections: newSections } }
+                                    }));
+                                  }}
+                                  className="w-full bg-white border border-gray-100 rounded-lg p-2 text-[12px] text-gray-500 outline-none focus:border-[#15CEFF]"
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  ))}
+                </div>
               </div>
             </div>
           )}

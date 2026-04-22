@@ -34,40 +34,36 @@ export default async function PortfolioDetailPage({ params }: PortfolioDetailPag
     <div className="relative min-h-screen bg-white flex flex-col font-sans overflow-x-hidden">
       <Header />
       
-      <main className="flex-grow w-full flex flex-col pt-12 pb-24 gap-32">
+      <main className="flex-grow w-full flex flex-col pt-4 pb-24 gap-12">
         
         {/* --- HERO SECTION --- */}
-        <section className="max-w-[1280px] mx-auto px-6 w-full pt-12">
+        <section className="max-w-[1280px] mx-auto px-6 w-full pt-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Hero Left Content */}
-            <div className="flex flex-col gap-10">
-              <div className="space-y-6">
-                {/* Dashed Project Name Box */}
-                <div className="relative inline-block px-4 py-2">
-                  <svg className="absolute inset-0 w-full h-full" aria-hidden="true">
-                    <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" fill="none" stroke="#15CEFF" strokeWidth="2" strokeDasharray="6 6" className="animate-[marching-ants_1.5s_linear_infinite]" />
-                  </svg>
-                  <h1 className="text-[#15CEFF] text-[36px] font-semibold tracking-tight relative z-10 px-4 py-2">
+            <div className="flex flex-col gap-4">
+              <div className="space-y-4">
+                <div className="relative inline-block">
+                  <h1 className="text-[#15CEFF] text-[28px] font-semibold tracking-tight">
                     {project.title}
                   </h1>
                 </div>
                 
-                <h2 className="text-[#000000] text-[24px] font-bold leading-tight">
+                <h2 className="text-[#000000] text-[20px] font-medium leading-tight">
                   {project.category}
                 </h2>
-                <p className="text-black text-[20px] font-semibold leading-relaxed max-w-[500px]">
+                <p className="text-black text-[16px] font-normal leading-relaxed max-w-[369px]">
                   {project.shortDescription}
                 </p>
               </div>
 
               {/* Offered Services Tags */}
-              <div className="space-y-6">
-                <h4 className="text-[#15CEFF] text-[18px] font-bold uppercase tracking-wide">
+              <div className="space-y-4">
+                <h4 className="text-[#15CEFF] text-[16px] font-semibold uppercase tracking-wide">
                   Offered Services:
                 </h4>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-4">
                   {project.offeredServices?.map((service: string, i: number) => (
-                    <div key={i} className="px-6 py-2 rounded-full border border-[#15CEFF] text-[#15CEFF] text-[14px] font-medium whitespace-nowrap">
+                    <div key={i} className="px-4 py-2 rounded-[21.5px] border border-[#15CEFF] text-[#15CEFF] text-[12px] font-normal tracking-[0.07em] whitespace-nowrap uppercase">
                       {service}
                     </div>
                   ))}
@@ -75,11 +71,10 @@ export default async function PortfolioDetailPage({ params }: PortfolioDetailPag
               </div>
             </div>
 
-            {/* Hero Right Image (Floating Mockups) */}
-            <div className="relative flex items-center justify-center">
-              <div className="relative w-full max-w-[600px] aspect-square rounded-[40px] bg-orange-100 flex items-center justify-center">
+            <div className="relative flex items-center justify-center lg:justify-end">
+              <div className="relative w-full max-w-[480px] h-[368px] flex items-center justify-center overflow-hidden">
                  {/* Large floating center image or pattern */}
-                 <div className="relative z-10 w-[80%] h-[80%] flex items-center justify-center">
+                 <div className="relative z-10 w-full h-full flex items-center justify-center">
                    {project.heroImage ? (
                      <img src={project.heroImage} alt="Hero Mockup" className="w-full h-full object-contain" />
                    ) : (
@@ -94,19 +89,16 @@ export default async function PortfolioDetailPage({ params }: PortfolioDetailPag
         {/* --- INTRODUCTION SECTION --- */}
         <section className="max-w-[1280px] mx-auto px-6 w-full space-y-12">
           <div className="space-y-8">
-            <div className="relative inline-block px-4 py-2">
-               <svg className="absolute inset-0 w-full h-full" aria-hidden="true">
-                 <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" fill="none" stroke="#22C55E" strokeWidth="2" strokeDasharray="6 6" />
-               </svg>
-               <h3 className="text-[#22C55E] text-[24px] font-semibold tracking-tight relative z-10 px-4 py-2">
+            <div className="relative inline-block">
+               <h3 className="text-[#41D692] text-[28px] font-normal tracking-tight">
                  Introduction
                </h3>
             </div>
-            <p className="text-black text-[18px] leading-relaxed max-w-[1100px]" dangerouslySetInnerHTML={{ __html: project.introduction.text }} />
+            <p className="text-black text-[16px] leading-relaxed max-w-[1072px]" dangerouslySetInnerHTML={{ __html: project.introduction.text }} />
           </div>
 
           {/* Intro Large Image Area */}
-          <div className="w-full aspect-[2/1] rounded-[40px] bg-orange-100 flex items-center justify-center overflow-hidden">
+          <div className="w-full max-w-[922px] aspect-[922/447] mx-auto flex items-center justify-center overflow-hidden">
              {project.introduction.image ? (
                <img src={project.introduction.image} alt="Intro Image" className="w-[90%] h-[90%] object-contain" />
              ) : (
@@ -120,24 +112,24 @@ export default async function PortfolioDetailPage({ params }: PortfolioDetailPag
         </section>
 
         {/* --- KEY FEATURES SECTION --- */}
-        <section className="max-w-[1280px] mx-auto px-6 w-full space-y-16">
+        <section className="max-w-[1280px] mx-auto px-6 w-full space-y-12">
           <div className="space-y-8">
-             <h3 className="text-[#22C55E] text-[24px] font-semibold tracking-tight">
+             <h3 className="text-[#41D692] text-[28px] font-normal tracking-tight">
                Key Features
              </h3>
-             <div className="space-y-10 border-2 border-dashed border-[#15CEFF] p-8 lg:p-12 rounded-3xl">
+             <div className="space-y-4 p-2">
                 {project.keyFeatures.items.map((feature: any, i: number) => (
-                  <div key={i} className="space-y-2">
-                    <h4 className="text-black text-[18px] font-bold">
-                      {feature.title}: <span className="font-normal text-gray-700">{feature.description}</span>
-                    </h4>
+                  <div key={i} className="max-w-[1072px]">
+                    <p className="text-black text-[16px] leading-relaxed">
+                      <span className="font-semibold">{feature.title}:</span> <span className="font-normal">{feature.description}</span>
+                    </p>
                   </div>
                 ))}
              </div>
           </div>
 
           {/* Features Large Image Area */}
-          <div className="w-full aspect-[2/1] rounded-[40px] bg-orange-100 flex items-center justify-center overflow-hidden">
+          <div className="w-full max-w-[922px] aspect-[922/447] mx-auto flex items-center justify-center overflow-hidden">
              {project.keyFeatures.image ? (
                <img src={project.keyFeatures.image} alt="Features Image" className="w-[90%] h-[90%] object-contain" />
              ) : (
@@ -154,25 +146,22 @@ export default async function PortfolioDetailPage({ params }: PortfolioDetailPag
         <section className="max-w-[1280px] mx-auto px-6 w-full flex flex-col gap-24">
           {/* Challenge */}
           <div className="space-y-8">
-            <div className="relative inline-block px-4 py-2">
-               <svg className="absolute inset-0 w-full h-full" aria-hidden="true">
-                 <rect x="1" y="1" width="calc(100% - 2px)" height="calc(100% - 2px)" fill="none" stroke="#22C55E" strokeWidth="2" strokeDasharray="6 6" />
-               </svg>
-               <h3 className="text-[#22C55E] text-[24px] font-semibold tracking-tight relative z-10 px-4 py-2">
+            <div className="relative inline-block">
+               <h3 className="text-[#41D692] text-[28px] font-normal tracking-tight">
                  Challenge
                </h3>
             </div>
-            <div className="text-black text-[18px] leading-relaxed max-w-[1100px] whitespace-pre-wrap">
+            <div className="text-black text-[16px] leading-relaxed max-w-[1072px] whitespace-pre-wrap">
               {project.challenge}
             </div>
           </div>
 
           {/* Solutions */}
           <div className="space-y-8">
-            <h3 className="text-[#22C55E] text-[24px] font-semibold tracking-tight">
+            <h3 className="text-[#41D692] text-[28px] font-normal tracking-tight">
               Our Solutions
             </h3>
-            <div className="text-black text-[18px] leading-relaxed max-w-[1100px] whitespace-pre-wrap">
+            <div className="text-black text-[16px] leading-relaxed max-w-[1072px] whitespace-pre-wrap">
               {project.solution}
             </div>
           </div>

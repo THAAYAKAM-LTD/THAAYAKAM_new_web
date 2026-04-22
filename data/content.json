@@ -35,8 +35,8 @@
           "title": "Mobile App Development",
           "description": "Empower your business with the magic of mobile. Seamlessly connect with your audience and showcase your offerings at their fingertips. Our dedicated mobile app development service empowers you to share your vision with the world. Our seasoned team harnesses cutting-edge technologies to guide you across:",
           "features": [
-            "Android App Prowess", 
-            "iOS App Excellence", 
+            "Android App Prowess",
+            "iOS App Excellence",
             "Ongoing Maintenance"
           ]
         },
@@ -46,8 +46,8 @@
           "title": "Web App Development",
           "description": "Elevate your brand's online presence with captivating web applications that exhibit your offerings to the world. Our expert web app development service equips you with adaptive solutions, merging form and function through an array of innovative tools. Our skilled team guides you through:",
           "features": [
-            "Full-Stack Expertise", 
-            "Tailored API Solutions", 
+            "Full-Stack Expertise",
+            "Tailored API Solutions",
             "Ongoing Maintenance"
           ]
         },
@@ -57,8 +57,8 @@
           "title": "Brand Design",
           "description": "Amidst the dynamic competitive landscape, let your brand shine with unparalleled identity and impactful customer engagement. Our dedicated team commits to infusing creativity and passion into every aspect of your brand's journey, including:",
           "features": [
-            "Identity Design Excellence", 
-            "Seamless UI/UX Innovation", 
+            "Identity Design Excellence",
+            "Seamless UI/UX Innovation",
             "Striking Product Design"
           ]
         }
@@ -523,17 +523,18 @@
       "category": "Mobile Application Development",
       "shortDescription": "Realtime Location Based Deals Notifying Application.",
       "country": "United Kingdom 🇬🇧",
-      "thumbnail": "/portfolio/promozon-card.svg",
+      "thumbnail": "/uploads/1776876991120_promo_main_thumb.svg",
       "offeredServices": [
-        "UI / UX Design",
         "Brand Identity Design",
         "Mobile Application Development",
-        "Cloud Architecture & Construction"
+        "Cloud Architecture & Construction",
+        "Offered Services:",
+        "Brand Identity Design"
       ],
-      "heroImage": "/portfolio/promozon-hero.svg",
+      "heroImage": "/uploads/1776876996621_promo_thumb.svg",
       "introduction": {
         "text": "We had the privilege of collaborating with PromoZon, a UK 🇬🇧-based startup. PromoZon aims to revolutionise the customer-merchant relationship in the digital age. We developed two native mobile apps, one for customers and one for merchants, available on both iOS and Android devices. PromoZon represents a successful collaboration that integrates cutting-edge technology, native mobile development, and geolocation precision to deliver a unique and highly interactive shopping experience. It's the ultimate tool for both customers seeking great deals and merchants looking to boost their business.",
-        "image": "/portfolio/promozon-intro.svg"
+        "image": "/uploads/1776877015776_promoCustomer.svg"
       },
       "keyFeatures": {
         "items": [
@@ -558,10 +559,56 @@
             "description": "PromoZon rewards customers with loyalty points for their active participation and provides a comprehensive wallet feature for tracking points and earning history."
           }
         ],
-        "image": "/portfolio/promozon-features.svg"
+        "image": "/uploads/1776877011021_promoMerchant.svg"
       },
       "challenge": "Our collaboration with PromoZon presented multifaceted challenges. One key hurdle was developing a location-based mobile app that seamlessly served personalised deal notifications. Handling the intricacies of geolocation and ensuring a smooth user experience was a considerable task.\n\nCrafting a dual mobile app for both iOS and Android platforms added another layer of complexity. Meeting the distinct requirements of these platforms required meticulous attention.\n\nAdditionally, facilitating efficient communication between customers and merchants, including real-time notifications, robust messaging, and reporting mechanisms, was a significant undertaking.",
       "solution": "Our team adopted a multi-pronged approach. Leveraging native development ensured that PromoZon's apps operated efficiently on both iOS and Android devices.\n\nGeo-location challenges were met with innovative solutions, resulting in precise location tracking and real-time notifications. We integrated QR code technology for secure deal redemption. Our solution also featured a comprehensive messaging system for merchants and customers, enhancing communication and collaboration.\n\nDealing with the complex customer-merchant ecosystem, we implemented robust backend solutions for data management, enhancing the performance and reliability of the application. Additionally, a comprehensive reporting system was developed, allowing users to report concerns or issues with ease.\n\nIn developing the PromoZon project, our team navigated through these challenges with a combination of technical expertise and innovative solutions."
+    },
+    {
+      "id": "project-1776881774989",
+      "title": "British Tamils Cricket League",
+      "category": "Web Application Development",
+      "shortDescription": "Enter intro pitch...Full Stack Revamp of Cricket League’s Website\nand Players Management System",
+      "country": "United Kingdom 🇬🇧",
+      "thumbnail": "/uploads/1776882124946_Home.svg",
+      "offeredServices": [
+        "UI / UX Design",
+        "Brand Design",
+        "Web Application Development",
+        "Cloud Architecture & Construction"
+      ],
+      "heroImage": "/uploads/1776881909126_Home.svg",
+      "introduction": {
+        "text": "In our collaboration with the British Tamils Cricket League (BTCL), we embarked on a mission to transform and revolutionise their online presence. BTCL, a prominent cricket league based in the UK 🇬🇧, serves as a dynamic platform for cricket enthusiasts within the Tamil community. As BTCL's digital partner, with a deep understanding of BTCL's vibrant cricketing community, we revitalised their web presence, introducing a dynamic and intuitive interface that brings cricket enthusiasts closer to the game and we remain committed to BTCL's vision, with ongoing development in multiple phases. This collaborative journey promises to reshape the digital landscape for the cricketing community",
+        "image": "/uploads/1776881942689_btcl_banner_01.svg"
+      },
+      "keyFeatures": {
+        "items": [
+          {
+            "title": "Revamped UI/UX Design",
+            "description": " Our UI/UX design drew inspiration from industry giants such as the Indian Premier League, ushering in a fresh and innovative user experience. The design not only captivates visitors but also ensures seamless navigation and interaction."
+          },
+          {
+            "title": "Responsive Front-End:",
+            "description": "The intuitive design adapts to different screen sizes, ensuring that fans and players can enjoy the BTCL experience without any constraints."
+          },
+          {
+            "title": "Modernised Back-End",
+            "description": "The back-end underwent a complete overhaul with the integration of modern PHP frameworks. This transformation injected new life into BTCL's operations, enhancing the efficiency, speed, and overall functionality of the website. It's the backbone of a dynamic and agile online presence\n"
+          },
+          {
+            "title": "Seamless Data Integration",
+            "description": " Third-party APIs were seamlessly integrated, providing real-time capabilities and enriching the platform with up-to-the-minute player data. This integration not only kept the platform updated but also allowed fans and players to stay informed about the latest developments in the league.\n"
+          },
+          {
+            "title": "Multi-Phase Development:",
+            "description": "The project's development approach is multi-phased, ensuring that the BTCL digital presence evolves continuously. Each phase promises to deliver a better experience, with enhancements and refinements planned ahead. This commitment to ongoing development ensures that BTCL remains at the forefront of digital innovation."
+          }
+        ],
+        "image": "/uploads/1776882070724_btcl_banner_01.svg"
+      },
+      "challenge": "The challenges in this project were manifold. Overhauling each page and feature of the existing website presented a complex and comprehensive task. The transition from the old website to the new one was another significant challenge, requiring a seamless shift without any disruptions to BTCL's online operations.\n\nManaging and migrating the extensive player and team database was another complex task that demanded meticulous planning. The technicalities involved in this process were significant, but we approached them strategically. Our team's technical prowess and problem-solving skills ensured that we overcame these challenges and delivered BTCL a seamlessly transitioned, revamped website that elevates their online experience.",
+      "solution": "Addressing the design challenges required an in-depth exploration of industry best practices employed by world-leading sports clubs. Our UI/UX design was meticulously crafted to meet the highest standards of usability and aesthetics, ensuring that BTCL's digital presence matched the top tier in the sports world.\n\nTo overcome the technical challenges, we adopted modern PHP frameworks, optimizing the code's efficiency to handle extensive databases seamlessly. The integration of third-party APIs provided real-time capabilities, ensuring that the platform remained up-to-date with the latest player data.\n\nThis project reflects our unwavering dedication to excellence, technology, and client satisfaction. We are honored to be part of BTCL's transformative journey, where cricket intersects with innovation, setting a new standard in the sports community."
     }
   ]
 }

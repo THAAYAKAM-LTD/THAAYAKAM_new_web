@@ -214,6 +214,302 @@
           "type": "stats"
         }
       ]
+    },
+    "mobile": {
+      "title": "Mobile Application Development",
+      "subtitle": "Elevate Your vision with Exceptional Mobile Apps 🚀",
+      "paragraphs": [
+        "Welcome to our world of mobile application development 💡! Our seasoned team of tech virtuosos is here to transform your digital dreams into stunning, functional, and user-centric mobile applications 📲. We thrive on innovation, cutting-edge technology, and a passion for excellence. Let's embark on a journey to boost your business to new heights! 🚀"
+      ],
+      "cta": "Schedule a consultation 📅",
+      "illustration": "/service/Group 612.svg",
+      "sections": [
+        {
+          "id": "android-dev",
+          "type": "feature-list",
+          "title": "Android Application Development",
+          "description": "Dive into the Android ecosystem with us! Our Android Application Development expertise knows no bounds. We craft intuitive, feature-rich, and high-performance apps tailored to the Android platform 📱. Explore the limitless possibilities of Android app development with our team 🌐.",
+          "illustration": "/service/Group 614.svg",
+          "items": [
+            {
+              "title": "Feature-Rich Development",
+              "description": "Our expertise enables us to integrate advanced features seamlessly, enhancing user engagement and functionality."
+            },
+            {
+              "title": "Platform Optimisation",
+              "description": "We optimise your app for the Android platform, ensuring it performs at its best on a wide range of devices."
+            },
+            {
+              "title": "Performance Excellence",
+              "description": "We prioritise app performance, delivering speedy, responsive, and efficient Android applications for your users."
+            }
+          ]
+        },
+        {
+          "id": "ios-dev",
+          "type": "feature-list",
+          "title": "iOS Application Development",
+          "description": "Unlock the potential of iOS with our iOS Application Development prowess! We specialise in building sleek, responsive, and engaging apps for Apple devices 📱. From iPhones to iPads, we ensure your iOS app delivers a flawless user experience. Join us in crafting the next big thing for iOS 🚀.",
+          "illustration": "/service/Group 615.svg",
+          "items": [
+            {
+              "title": "Apple Ecosystem Integration",
+              "description": "We seamlessly integrate your iOS app into the Apple ecosystem, ensuring compatibility across various devices."
+            },
+            {
+              "title": "User-Centric Design",
+              "description": "Our expertise lies in creating user-centric designs that maximise user engagement and deliver a premium experience."
+            },
+            {
+              "title": "Performance Optimisation",
+              "description": "We prioritise performance, crafting iOS apps that are not only visually appealing but also fast, responsive, and resource-efficient."
+            }
+          ]
+        },
+        {
+          "id": "mobile-maintenance",
+          "type": "feature-list",
+          "title": "Ongoing Maintenance",
+          "description": "Your app's journey doesn't end with deployment! Our commitment extends to Ongoing Maintenance. We offer continuous support, updates, and optimisations to keep your app in peak condition 💪. Stay ahead of the curve with our maintenance solutions 📈.",
+          "illustration": "/service/Group 616.svg",
+          "items": [
+            {
+              "title": "Proactive Bug Resolution",
+              "description": "Our dedicated team proactively identifies and resolves bugs to ensure your app remains error-free and reliable."
+            },
+            {
+              "title": "Security Updates",
+              "description": "We stay vigilant and implement the latest security measures, safeguarding your app and user data against emerging threats."
+            },
+            {
+              "title": "Performance Optimization",
+              "description": "Our ongoing maintenance includes performance tuning, enhancing app speed, efficiency, and responsiveness."
+            }
+          ]
+        },
+        {
+          "id": "how-we-do",
+          "type": "process"
+        },
+        {
+          "id": "mission-stats",
+          "type": "stats"
+        }
+      ]
+    },
+    "cloud": {
+      "title": "Cloud Consultation",
+      "subtitle": "Elevate Your Business to the Cloud with Confidence 🚀",
+      "paragraphs": [
+        "Welcome to the future of cloud solutions ☁️! Our Cloud Consultation service is your gateway to harnessing the full potential of cloud technology. We specialise in architecting robust cloud infrastructure, seamless data migration, and fortified security measures. Let's embark on a journey to elevate your business to new heights! 🚀"
+      ],
+      "cta": "Schedule a consultation 📅",
+      "illustration": "/service/Group 617.svg",
+      "sections": [
+        {
+          "id": "infrastructure-construction",
+          "type": "feature-list",
+          "title": "Cloud Architecture and Construction",
+          "description": "Explore Cloud Architecture and Construction! 🏗️ We build cloud environments tailored to your needs, ensuring scalability, performance, and cost-efficiency. Our architects design the foundation for your digital transformation. 🌟",
+          "illustration": "/service/img_Android.svg",
+          "items": [
+            {
+              "title": "Scalable Infrastructure",
+              "description": "Our cloud solutions provide a scalable infrastructure that grows at your scale, allowing you to handle workloads effortlessly."
+            },
+            {
+              "title": "High Availability",
+              "description": "We design cloud architectures with redundancy and failover mechanisms to ensure your applications are highly available."
+            },
+            {
+              "title": "Cost Optimisation",
+              "description": "Our cloud experts optimise resource allocation, helping you save costs while maintaining peak performance."
+            }
+          ]
+        },
+        {
+          "id": "data-transition",
+          "type": "feature-list",
+          "title": "Effortless Data Transition",
+          "description": "Smoothly migrate your data and workloads to the cloud with our expert transition services. We ensure minimal downtime and maximum data integrity throughout the process. Let's make your move to the cloud seamless and stress-free! 🚀",
+          "illustration": "/service/img_iOS.svg",
+          "items": [
+            {
+              "title": "Data Mapping and Transformation",
+              "description": "We meticulously map and transform your data to ensure compatibility and efficiency in the new cloud environment."
+            },
+            {
+              "title": "Elastic Scalability",
+              "description": "We design data transition strategies that ensure your infrastructure can adapt to changing demands without disruption."
+            },
+            {
+              "title": "Data Validation and Integrity",
+              "description": "We implement rigorous validations to safeguard your data during the transition, maintaining its accuracy and confidentiality."
+            }
+          ]
+        },
+        {
+          "id": "infrastructure-maintenance",
+          "type": "feature-list",
+          "title": "Infrastructure Maintenance",
+          "description": "Your cloud infrastructure is in safe hands with us. We provide ongoing maintenance to keep your cloud environment in peak condition 🚀. With continuous support, updates, and optimisations, you'll stay ahead of the curve in the ever-evolving cloud landscape.",
+          "illustration": "/service/img_maintenence.svg",
+          "items": [
+            {
+              "title": "Proactive Optimisation",
+              "description": "We do continuous optimisation to your cloud infrastructure for peak performance, ensuring efficiency."
+            },
+            {
+              "title": "Security Updates",
+              "description": "We handle all security updates, safeguarding your data and infrastructure against emerging threats."
+            },
+            {
+              "title": "Cost-Efficiency",
+              "description": "We employ smart strategies that not only save you money but also provide the flexibility to scale resources as needed."
+            }
+          ]
+        },
+        {
+          "id": "why-choose-us",
+          "type": "grid-features",
+          "title": "Why Choose Us ⭐?",
+          "subtitle": "Choose Us for Cloud Excellence! ☁️",
+          "items": [
+            {
+              "title": "Cloud Expertise ⚡",
+              "description": "Our certified team is well-versed in cloud technologies and best practices."
+            },
+            {
+              "title": "Client-Centric Approach 👥",
+              "description": "We prioritise your success with personalised, collaborative service."
+            },
+            {
+              "title": "Efficiency and Reliability ⚙️",
+              "description": "We ensure your cloud solutions run efficiently and reliably."
+            },
+            {
+              "title": "Tailored Solutions 🛠️",
+              "description": "Our solutions are customised to your unique business needs."
+            }
+          ],
+          "cta": "Schedule a consultation 📅"
+        },
+        {
+          "id": "how-we-do",
+          "type": "process"
+        },
+        {
+          "id": "mission-stats",
+          "type": "stats"
+        }
+      ]
+    },
+    "brand": {
+      "title": "Brand Design",
+      "subtitle": "Elevate Your Brand with Creative Brilliance 🚀",
+      "paragraphs": [
+        "Welcome to the world of brand design 🎨! Our Brand Design service is your gateway to building a distinctive and memorable brand identity. We specialise in crafting striking logos, seamless user experiences, and innovative product designs. Let's embark on a journey to define your brand's future! 🚀"
+      ],
+      "cta": "Schedule a consultation 📅",
+      "illustration": "/service/Group 618.svg",
+      "sections": [
+        {
+          "id": "ui-ux-innovation",
+          "type": "feature-list",
+          "title": "Seamless UI/UX Innovation",
+          "description": "Explore Seamless UI/UX Innovation! 💡 We craft user-centric interfaces and experiences that captivate and engage. Every click, swipe, and interaction is designed for success. 🌐",
+          "illustration": "/service/Group 619.svg",
+          "items": [
+            {
+              "title": "User-Centric Interfaces",
+              "description": "Our UI/UX innovations are centered around your users, prioritise highly intuitive and user-friendly."
+            },
+            {
+              "title": "Engagement-Driven Design",
+              "description": "Each element we create, from clicks to swipes, is meticulously designed to enhance user engagement."
+            },
+            {
+              "title": "Optimised for Success",
+              "description": "Our solutions that keep your users coming back for more, ultimately driving the success of your digital products."
+            }
+          ]
+        },
+        {
+          "id": "identity-design",
+          "type": "feature-list",
+          "title": "Identity Design Excellence",
+          "description": "Experience Identity Design Excellence! 🌟 We create iconic logos and brand identities that resonate with your audience, leaving a lasting impression. Your brand's visual identity starts here. 🎯",
+          "illustration": "/service/Group (1).svg",
+          "items": [
+            {
+              "title": "Iconic Logos",
+              "description": "We create visually striking logos that encapsulate your brand's essence and values, setting the stage for a lasting impression."
+            },
+            {
+              "title": "Lasting Impressions",
+              "description": "We craft designs that resonate with your target audience, ensuring your brand stands out in a crowded marketplace."
+            },
+            {
+              "title": "Visual Identity",
+              "description": "Your brand's visual identity is a critical component of its success, and we are here to ensure it shines."
+            }
+          ]
+        },
+        {
+          "id": "brand-product-design",
+          "type": "feature-list",
+          "title": "Striking Product Design",
+          "description": "Discover Striking Product Design! 🚀 Our design prowess extends to products that blend aesthetics with functionality. Stand out in the market with eye-catching, user-friendly products. 📈",
+          "illustration": "/service/Group 620.svg",
+          "items": [
+            {
+              "title": "Aesthetic Functionality",
+              "description": "We create products that perfectly combine aesthetics with functionality, ensuring your offerings stand out."
+            },
+            {
+              "title": "Market Distinction",
+              "description": "You'll capture attention in a competitive market with designs that are not only eye-catching but also user-friendly."
+            },
+            {
+              "title": "User-Centric Approach",
+              "description": "We prioritise your users' needs and preferences, crafting products that ultimately driving growth."
+            }
+          ]
+        },
+        {
+          "id": "why-choose-us",
+          "type": "grid-features",
+          "title": "Why Choose Us ⭐?",
+          "subtitle": "Choose Us for Brand Brilliance! 🎨",
+          "items": [
+            {
+              "title": "Creative Mastery 🎨",
+              "description": "Our team is a blend of creative minds that bring your brand to life."
+            },
+            {
+              "title": "User-Centric Focus 👥",
+              "description": "We design with your audience in mind, ensuring exceptional user experiences."
+            },
+            {
+              "title": "Brand Impact 🌐",
+              "description": "We create designs that make an impact setting you apart from the competition."
+            },
+            {
+              "title": "Collaborative Approach 🚀",
+              "description": "We work closely with you to ensure your vision is realised."
+            }
+          ],
+          "cta": "Schedule a consultation 📅"
+        },
+        {
+          "id": "how-we-do",
+          "type": "process"
+        },
+        {
+          "id": "mission-stats",
+          "type": "stats"
+        }
+      ]
     }
   }
 }

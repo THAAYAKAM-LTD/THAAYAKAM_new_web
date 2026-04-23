@@ -2,10 +2,13 @@
 
 import React from "react";
 import { 
-  SiReact, SiPython, SiDocker, SiAws, SiNextdotjs, SiFigma,
-  SiLaravel, SiAzure, SiMicrosoftsqlserver, SiSquarespace,
+  SiReact, SiPython, SiDocker, SiNextdotjs, SiFigma,
+  SiLaravel, SiSquarespace,
   SiFlutter, SiDotnet, SiShopify, SiWebflow 
 } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+import { TbBrandAzure } from "react-icons/tb";
+import { DiMsqlServer } from "react-icons/di";
 
 const INNER_RADIUS = 30; // %
 const OUTER_RADIUS = 44; // %
@@ -14,15 +17,15 @@ const INNER_TECH = [
   { Icon: SiReact, label: "React", color: "#61DAFB" },
   { Icon: SiPython, label: "Python", color: "#3776AB" },
   { Icon: SiDocker, label: "Docker", color: "#2496ED" },
-  { Icon: SiAws, label: "AWS", color: "#FF9900" },
+  { Icon: FaAws, label: "AWS", color: "#FF9900" },
   { Icon: SiNextdotjs, label: "Next.js", color: "#000000" },
   { Icon: SiFigma, label: "Figma", color: "#F24E1E" },
 ];
 
 const OUTER_TECH = [
   { Icon: SiLaravel, label: "Laravel", color: "#FF2D20" },
-  { Icon: SiAzure, label: "Azure", color: "#0089D6" },
-  { Icon: SiMicrosoftsqlserver, label: "SQL Server", color: "#CC2927" },
+  { Icon: TbBrandAzure, label: "Azure", color: "#0089D6" },
+  { Icon: DiMsqlServer, label: "SQL Server", color: "#CC2927" },
   { Icon: SiSquarespace, label: "Squarespace", color: "#000000" },
   { Icon: SiFlutter, label: "Flutter", color: "#02569B" },
   { Icon: SiDotnet, label: ".NET", color: "#512BD4" },

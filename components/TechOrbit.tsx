@@ -3,7 +3,7 @@
 import React from "react";
 import { 
   SiReact, SiPython, SiDocker, SiAws, SiNextdotjs, SiFigma,
-  SiLaravel, SiMicrosoftazure, SiMicrosoftsqlserver, SiSquarespace,
+  SiLaravel, SiAzure, SiMicrosoftsqlserver, SiSquarespace,
   SiFlutter, SiDotnet, SiShopify, SiWebflow 
 } from "react-icons/si";
 
@@ -21,7 +21,7 @@ const INNER_TECH = [
 
 const OUTER_TECH = [
   { Icon: SiLaravel, label: "Laravel", color: "#FF2D20" },
-  { Icon: SiMicrosoftazure, label: "Azure", color: "#0089D6" },
+  { Icon: SiAzure, label: "Azure", color: "#0089D6" },
   { Icon: SiMicrosoftsqlserver, label: "SQL Server", color: "#CC2927" },
   { Icon: SiSquarespace, label: "Squarespace", color: "#000000" },
   { Icon: SiFlutter, label: "Flutter", color: "#02569B" },

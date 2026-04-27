@@ -62,7 +62,7 @@ export default function AdminDashboard() {
       });
 
       if (res.ok) {
-        setStatus({ type: "success", message: "Content updated successfully! 🚀" });
+        setStatus({ type: "success", message: "Content updated successfully!" });
         setTimeout(() => setStatus(null), 3000);
       } else {
         throw new Error("Failed to save");
@@ -211,7 +211,7 @@ export default function AdminDashboard() {
       if (res.ok) {
         const data = await res.json();
         onUploadSuccess(data.url);
-        setStatus({ type: "success", message: "Image uploaded successfully! ✨" });
+        setStatus({ type: "success", message: "Image uploaded successfully!" });
         setTimeout(() => setStatus(null), 3000);
       } else {
         throw new Error("Upload failed");

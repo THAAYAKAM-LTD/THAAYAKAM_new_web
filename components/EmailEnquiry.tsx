@@ -11,7 +11,7 @@ export function EmailEnquiry() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-[#15CEFF] text-[20px] font-semibold tracking-tight">
-            Send us an Email 📧
+            Send us an Email
           </h2>
         </div>
 
@@ -24,7 +24,7 @@ export function EmailEnquiry() {
               General Enquiry
             </h3>
             <p className="text-[#000000] text-[16px] leading-[1.6] font-normal grow">
-              Reach out to us directly via email ✉️. We're ready to engage in a productive conversation about your requirements 💼.
+              Reach out to us directly via email. We're ready to engage in a productive conversation about your requirements.
             </p>
             <div>
               <Button 
@@ -42,7 +42,7 @@ export function EmailEnquiry() {
               Careers Enquiry
             </h3>
             <p className="text-[#000000] text-[16px] leading-[1.6] font-normal grow">
-              Engage with us through email to discuss potential career opportunities ✉️. Let's explore your future with us. 🌟
+              Engage with us through email to discuss potential career opportunities. Let's explore your future with us.
             </p>
             <div>
               <Button 

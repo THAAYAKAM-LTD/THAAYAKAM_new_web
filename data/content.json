@@ -9,14 +9,14 @@
       "hero": {
         "title": "Welcome to Thaayakam!",
         "line1": "To make your footprints glow into the digital era,",
-        "line2": "We assist 🤝 you to gear-up yourself through,",
-        "cta": "Schedule a consultation 📅",
-        "explore": "Explore us 😎"
+        "line2": "We assist  you to gear-up yourself through,",
+        "cta": "Schedule a consultation ",
+        "explore": "Explore us "
       }
     },
     "services": {
-      "title": "What we do! ⚙️",
-      "subtitle": "Our team 😎 with extensive knowledge and innovative thoughts is here to deliver top-performing innovative solutions tied with robust, trust and intelligence to deploy your performance into a new era!",
+      "title": "What we do! ️",
+      "subtitle": "Our team  with extensive knowledge and innovative thoughts is here to deliver top-performing innovative solutions tied with robust, trust and intelligence to deploy your performance into a new era!",
       "items": [
         {
           "id": "cloud",
@@ -91,7 +91,7 @@
     },
     "careers": {
       "hero": {
-        "title": "Embark on a journey of excellence ⚡",
+        "title": "Embark on a journey of excellence ",
         "paragraphs": [
           "We are an enterprising startup driven by a team of dedicated professionals. Our commitment lies in delivering an array of comprehensive services to our esteemed clients.",
           "In line with this vision, we are actively seeking individuals who share our passion for technology, thrive in learning novel concepts, and exhibit exceptional logical thinking and problem-solving acumen. If you believe you align with our organizational ethos, kindly submit your resume.",
@@ -110,18 +110,18 @@
   "serviceDetails": {
     "web": {
       "title": "Web Application Development",
-      "subtitle": "Elevate Your Online Presence with Bespoke Web Solutions 🚀",
+      "subtitle": "Elevate Your Online Presence with Bespoke Web Solutions ",
       "paragraphs": [
-        "Welcome to the space of web application development 🌐! Our expert team specialises in crafting cutting-edge, tailor-made web solutions that empower your digital journey. We blend innovation, technology, and creativity to shape web experiences that captivate and convert. Let's embark on a transformational journey to redefine your online presence 🚀!"
+        "Welcome to the space of web application development ! Our expert team specialises in crafting cutting-edge, tailor-made web solutions that empower your digital journey. We blend innovation, technology, and creativity to shape web experiences that captivate and convert. Let's embark on a transformational journey to redefine your online presence !"
       ],
-      "cta": "Schedule a consultation 📅",
+      "cta": "Schedule a consultation ",
       "illustration": "/service/Group 601.svg",
       "sections": [
         {
           "id": "full-stack",
           "type": "feature-list",
           "title": "Full-Stack Expertise",
-          "description": "Explore our Full-Stack Expertise 💻! We're masters of both front-end and back-end technologies, ensuring a seamless, feature-rich, and dynamic web experience. From user interfaces to server architecture, we've got it all covered 🌟.",
+          "description": "Explore our Full-Stack Expertise ! We're masters of both front-end and back-end technologies, ensuring a seamless, feature-rich, and dynamic web experience. From user interfaces to server architecture, we've got it all covered .",
           "illustration": "/service/undraw_website_builder_re_ii6e 1.svg",
           "items": [
             {
@@ -142,7 +142,7 @@
           "id": "tailored-api",
           "type": "feature-list",
           "title": "Tailored API Solutions",
-          "description": "Discover our Tailored API Solutions 🛠️! We engineer custom APIs that seamlessly connect your web applications to external services, enhancing functionality and data flow. Say goodbye to one-size-fits-all solutions and embrace the power of customisation 🚀.",
+          "description": "Discover our Tailored API Solutions ️! We engineer custom APIs that seamlessly connect your web applications to external services, enhancing functionality and data flow. Say goodbye to one-size-fits-all solutions and embrace the power of customisation .",
           "illustration": "/service/undraw_product_iteration_kjok 1.svg",
           "items": [
             {
@@ -163,7 +163,7 @@
           "id": "ongoing-maintenance",
           "type": "feature-list",
           "title": "Ongoing Maintenance",
-          "description": "Stay ahead with Ongoing Maintenance 🧰! We're committed to keeping your web app in peak condition. Our proactive maintenance ensures performance optimisation, security updates, and a smooth user experience. It's the secret to sustained online success 📈.",
+          "description": "Stay ahead with Ongoing Maintenance ! We're committed to keeping your web app in peak condition. Our proactive maintenance ensures performance optimisation, security updates, and a smooth user experience. It's the secret to sustained online success .",
           "illustration": "/service/undraw_website_builder_re_ii6e 1.svg",
           "items": [
             {
@@ -184,26 +184,26 @@
           "id": "why-choose-us",
           "type": "grid-features",
           "title": "Why Choose Us ⭐?",
-          "subtitle": "Choose Us for a Web Revolution 🌐!",
+          "subtitle": "Choose Us for a Web Revolution !",
           "items": [
             {
-              "title": "Technical Expertise ⚡",
+              "title": "Technical Expertise ",
               "description": "Our team boasts a wealth of technical knowledge and experience."
             },
             {
-              "title": "User-Centric Approach 👥",
+              "title": "User-Centric Approach ",
               "description": "User experience is our top priority, delivering engaging web applications."
             },
             {
-              "title": "Innovation Hub 💡",
+              "title": "Innovation Hub ",
               "description": "We're constantly exploring the latest tech trends to offer innovative solutions."
             },
             {
-              "title": "Flexible Collaboration 🔄",
+              "title": "Flexible Collaboration ",
               "description": "We adapt to your needs, offering flexible, agile development."
             }
           ],
-          "cta": "Schedule a consultation 📅"
+          "cta": "Schedule a consultation "
         },
         {
           "id": "how-we-do",
@@ -217,18 +217,18 @@
     },
     "mobile": {
       "title": "Mobile Application Development",
-      "subtitle": "Elevate Your vision with Exceptional Mobile Apps 🚀",
+      "subtitle": "Elevate Your vision with Exceptional Mobile Apps ",
       "paragraphs": [
-        "Welcome to our world of mobile application development 💡! Our seasoned team of tech virtuosos is here to transform your digital dreams into stunning, functional, and user-centric mobile applications 📲. We thrive on innovation, cutting-edge technology, and a passion for excellence. Let's embark on a journey to boost your business to new heights! 🚀"
+        "Welcome to our world of mobile application development ! Our seasoned team of tech virtuosos is here to transform your digital dreams into stunning, functional, and user-centric mobile applications . We thrive on innovation, cutting-edge technology, and a passion for excellence. Let's embark on a journey to boost your business to new heights! "
       ],
-      "cta": "Schedule a consultation 📅",
+      "cta": "Schedule a consultation ",
       "illustration": "/service/Group 612.svg",
       "sections": [
         {
           "id": "android-dev",
           "type": "feature-list",
           "title": "Android Application Development",
-          "description": "Dive into the Android ecosystem with us! Our Android Application Development expertise knows no bounds. We craft intuitive, feature-rich, and high-performance apps tailored to the Android platform 📱. Explore the limitless possibilities of Android app development with our team 🌐.",
+          "description": "Dive into the Android ecosystem with us! Our Android Application Development expertise knows no bounds. We craft intuitive, feature-rich, and high-performance apps tailored to the Android platform . Explore the limitless possibilities of Android app development with our team .",
           "illustration": "/service/Group 614.svg",
           "items": [
             {
@@ -249,7 +249,7 @@
           "id": "ios-dev",
           "type": "feature-list",
           "title": "iOS Application Development",
-          "description": "Unlock the potential of iOS with our iOS Application Development prowess! We specialise in building sleek, responsive, and engaging apps for Apple devices 📱. From iPhones to iPads, we ensure your iOS app delivers a flawless user experience. Join us in crafting the next big thing for iOS 🚀.",
+          "description": "Unlock the potential of iOS with our iOS Application Development prowess! We specialise in building sleek, responsive, and engaging apps for Apple devices . From iPhones to iPads, we ensure your iOS app delivers a flawless user experience. Join us in crafting the next big thing for iOS .",
           "illustration": "/service/Group 615.svg",
           "items": [
             {
@@ -270,7 +270,7 @@
           "id": "mobile-maintenance",
           "type": "feature-list",
           "title": "Ongoing Maintenance",
-          "description": "Your app's journey doesn't end with deployment! Our commitment extends to Ongoing Maintenance. We offer continuous support, updates, and optimisations to keep your app in peak condition 💪. Stay ahead of the curve with our maintenance solutions 📈.",
+          "description": "Your app's journey doesn't end with deployment! Our commitment extends to Ongoing Maintenance. We offer continuous support, updates, and optimisations to keep your app in peak condition . Stay ahead of the curve with our maintenance solutions .",
           "illustration": "/service/Group 616.svg",
           "items": [
             {
@@ -299,18 +299,18 @@
     },
     "cloud": {
       "title": "Cloud Consultation",
-      "subtitle": "Elevate Your Business to the Cloud with Confidence 🚀",
+      "subtitle": "Elevate Your Business to the Cloud with Confidence ",
       "paragraphs": [
-        "Welcome to the future of cloud solutions ☁️! Our Cloud Consultation service is your gateway to harnessing the full potential of cloud technology. We specialise in architecting robust cloud infrastructure, seamless data migration, and fortified security measures. Let's embark on a journey to elevate your business to new heights! 🚀"
+        "Welcome to the future of cloud solutions ️! Our Cloud Consultation service is your gateway to harnessing the full potential of cloud technology. We specialise in architecting robust cloud infrastructure, seamless data migration, and fortified security measures. Let's embark on a journey to elevate your business to new heights! "
       ],
-      "cta": "Schedule a consultation 📅",
+      "cta": "Schedule a consultation ",
       "illustration": "/service/Group 617.svg",
       "sections": [
         {
           "id": "infrastructure-construction",
           "type": "feature-list",
           "title": "Cloud Architecture and Construction",
-          "description": "Explore Cloud Architecture and Construction! 🏗️ We build cloud environments tailored to your needs, ensuring scalability, performance, and cost-efficiency. Our architects design the foundation for your digital transformation. 🌟",
+          "description": "Explore Cloud Architecture and Construction! ️ We build cloud environments tailored to your needs, ensuring scalability, performance, and cost-efficiency. Our architects design the foundation for your digital transformation. ",
           "illustration": "/service/img_Android.svg",
           "items": [
             {
@@ -331,7 +331,7 @@
           "id": "data-transition",
           "type": "feature-list",
           "title": "Effortless Data Transition",
-          "description": "Smoothly migrate your data and workloads to the cloud with our expert transition services. We ensure minimal downtime and maximum data integrity throughout the process. Let's make your move to the cloud seamless and stress-free! 🚀",
+          "description": "Smoothly migrate your data and workloads to the cloud with our expert transition services. We ensure minimal downtime and maximum data integrity throughout the process. Let's make your move to the cloud seamless and stress-free! ",
           "illustration": "/service/img_iOS.svg",
           "items": [
             {
@@ -352,7 +352,7 @@
           "id": "infrastructure-maintenance",
           "type": "feature-list",
           "title": "Infrastructure Maintenance",
-          "description": "Your cloud infrastructure is in safe hands with us. We provide ongoing maintenance to keep your cloud environment in peak condition 🚀. With continuous support, updates, and optimisations, you'll stay ahead of the curve in the ever-evolving cloud landscape.",
+          "description": "Your cloud infrastructure is in safe hands with us. We provide ongoing maintenance to keep your cloud environment in peak condition . With continuous support, updates, and optimisations, you'll stay ahead of the curve in the ever-evolving cloud landscape.",
           "illustration": "/service/img_maintenence.svg",
           "items": [
             {
@@ -373,26 +373,26 @@
           "id": "why-choose-us",
           "type": "grid-features",
           "title": "Why Choose Us ⭐?",
-          "subtitle": "Choose Us for Cloud Excellence! ☁️",
+          "subtitle": "Choose Us for Cloud Excellence! ️",
           "items": [
             {
-              "title": "Cloud Expertise ⚡",
+              "title": "Cloud Expertise ",
               "description": "Our certified team is well-versed in cloud technologies and best practices."
             },
             {
-              "title": "Client-Centric Approach 👥",
+              "title": "Client-Centric Approach ",
               "description": "We prioritise your success with personalised, collaborative service."
             },
             {
-              "title": "Efficiency and Reliability ⚙️",
+              "title": "Efficiency and Reliability ️",
               "description": "We ensure your cloud solutions run efficiently and reliably."
             },
             {
-              "title": "Tailored Solutions 🛠️",
+              "title": "Tailored Solutions ️",
               "description": "Our solutions are customised to your unique business needs."
             }
           ],
-          "cta": "Schedule a consultation 📅"
+          "cta": "Schedule a consultation "
         },
         {
           "id": "how-we-do",
@@ -406,18 +406,18 @@
     },
     "brand": {
       "title": "Brand Design",
-      "subtitle": "Elevate Your Brand with Creative Brilliance 🚀",
+      "subtitle": "Elevate Your Brand with Creative Brilliance ",
       "paragraphs": [
-        "Welcome to the world of brand design 🎨! Our Brand Design service is your gateway to building a distinctive and memorable brand identity. We specialise in crafting striking logos, seamless user experiences, and innovative product designs. Let's embark on a journey to define your brand's future! 🚀"
+        "Welcome to the world of brand design ! Our Brand Design service is your gateway to building a distinctive and memorable brand identity. We specialise in crafting striking logos, seamless user experiences, and innovative product designs. Let's embark on a journey to define your brand's future! "
       ],
-      "cta": "Schedule a consultation 📅",
+      "cta": "Schedule a consultation ",
       "illustration": "/service/Group 618.svg",
       "sections": [
         {
           "id": "ui-ux-innovation",
           "type": "feature-list",
           "title": "Seamless UI/UX Innovation",
-          "description": "Explore Seamless UI/UX Innovation! 💡 We craft user-centric interfaces and experiences that captivate and engage. Every click, swipe, and interaction is designed for success. 🌐",
+          "description": "Explore Seamless UI/UX Innovation!  We craft user-centric interfaces and experiences that captivate and engage. Every click, swipe, and interaction is designed for success. ",
           "illustration": "/service/Group 619.svg",
           "items": [
             {
@@ -438,7 +438,7 @@
           "id": "identity-design",
           "type": "feature-list",
           "title": "Identity Design Excellence",
-          "description": "Experience Identity Design Excellence! 🌟 We create iconic logos and brand identities that resonate with your audience, leaving a lasting impression. Your brand's visual identity starts here. 🎯",
+          "description": "Experience Identity Design Excellence!  We create iconic logos and brand identities that resonate with your audience, leaving a lasting impression. Your brand's visual identity starts here. ",
           "illustration": "/service/Group (1).svg",
           "items": [
             {
@@ -459,7 +459,7 @@
           "id": "brand-product-design",
           "type": "feature-list",
           "title": "Striking Product Design",
-          "description": "Discover Striking Product Design! 🚀 Our design prowess extends to products that blend aesthetics with functionality. Stand out in the market with eye-catching, user-friendly products. 📈",
+          "description": "Discover Striking Product Design!  Our design prowess extends to products that blend aesthetics with functionality. Stand out in the market with eye-catching, user-friendly products. ",
           "illustration": "/service/Group 620.svg",
           "items": [
             {
@@ -480,26 +480,26 @@
           "id": "why-choose-us",
           "type": "grid-features",
           "title": "Why Choose Us ⭐?",
-          "subtitle": "Choose Us for Brand Brilliance! 🎨",
+          "subtitle": "Choose Us for Brand Brilliance! ",
           "items": [
             {
-              "title": "Creative Mastery 🎨",
+              "title": "Creative Mastery ",
               "description": "Our team is a blend of creative minds that bring your brand to life."
             },
             {
-              "title": "User-Centric Focus 👥",
+              "title": "User-Centric Focus ",
               "description": "We design with your audience in mind, ensuring exceptional user experiences."
             },
             {
-              "title": "Brand Impact 🌐",
+              "title": "Brand Impact ",
               "description": "We create designs that make an impact setting you apart from the competition."
             },
             {
-              "title": "Collaborative Approach 🚀",
+              "title": "Collaborative Approach ",
               "description": "We work closely with you to ensure your vision is realised."
             }
           ],
-          "cta": "Schedule a consultation 📅"
+          "cta": "Schedule a consultation "
         },
         {
           "id": "how-we-do",
@@ -513,8 +513,8 @@
     }
   },
   "portfolioPage": {
-    "title": "Our Success Stories! 🚀",
-    "subtitle": "Explore our showcase of recent, innovative projects ✨ that reflect our commitment 💪 to quality and client satisfaction. 🤝 Scroll down to discover a diverse range of solutions."
+    "title": "Our Success Stories! ",
+    "subtitle": "Explore our showcase of recent, innovative projects  that reflect our commitment  to quality and client satisfaction.  Scroll down to discover a diverse range of solutions."
   },
   "portfolioItems": [
     {
@@ -522,7 +522,7 @@
       "title": "PromoZon",
       "category": "Mobile Application Development",
       "shortDescription": "Realtime Location Based Deals Notifying Application.",
-      "country": "United Kingdom 🇬🇧",
+      "country": "United Kingdom ",
       "thumbnail": "/uploads/1776876991120_promo_main_thumb.svg",
       "offeredServices": [
         "Brand Identity Design",
@@ -533,7 +533,7 @@
       ],
       "heroImage": "/uploads/1776876996621_promo_thumb.svg",
       "introduction": {
-        "text": "We had the privilege of collaborating with PromoZon, a UK 🇬🇧-based startup. PromoZon aims to revolutionise the customer-merchant relationship in the digital age. We developed two native mobile apps, one for customers and one for merchants, available on both iOS and Android devices. PromoZon represents a successful collaboration that integrates cutting-edge technology, native mobile development, and geolocation precision to deliver a unique and highly interactive shopping experience. It's the ultimate tool for both customers seeking great deals and merchants looking to boost their business.",
+        "text": "We had the privilege of collaborating with PromoZon, a UK -based startup. PromoZon aims to revolutionise the customer-merchant relationship in the digital age. We developed two native mobile apps, one for customers and one for merchants, available on both iOS and Android devices. PromoZon represents a successful collaboration that integrates cutting-edge technology, native mobile development, and geolocation precision to deliver a unique and highly interactive shopping experience. It's the ultimate tool for both customers seeking great deals and merchants looking to boost their business.",
         "image": "/uploads/1776877015776_promoCustomer.svg"
       },
       "keyFeatures": {
@@ -569,7 +569,7 @@
       "title": "British Tamils Cricket League",
       "category": "Web Application Development",
       "shortDescription": "Enter intro pitch...Full Stack Revamp of Cricket League’s Website\nand Players Management System",
-      "country": "United Kingdom 🇬🇧",
+      "country": "United Kingdom ",
       "thumbnail": "/uploads/1776882124946_Home.svg",
       "offeredServices": [
         "UI / UX Design",
@@ -579,7 +579,7 @@
       ],
       "heroImage": "/uploads/1776881909126_Home.svg",
       "introduction": {
-        "text": "In our collaboration with the British Tamils Cricket League (BTCL), we embarked on a mission to transform and revolutionise their online presence. BTCL, a prominent cricket league based in the UK 🇬🇧, serves as a dynamic platform for cricket enthusiasts within the Tamil community. As BTCL's digital partner, with a deep understanding of BTCL's vibrant cricketing community, we revitalised their web presence, introducing a dynamic and intuitive interface that brings cricket enthusiasts closer to the game and we remain committed to BTCL's vision, with ongoing development in multiple phases. This collaborative journey promises to reshape the digital landscape for the cricketing community",
+        "text": "In our collaboration with the British Tamils Cricket League (BTCL), we embarked on a mission to transform and revolutionise their online presence. BTCL, a prominent cricket league based in the UK , serves as a dynamic platform for cricket enthusiasts within the Tamil community. As BTCL's digital partner, with a deep understanding of BTCL's vibrant cricketing community, we revitalised their web presence, introducing a dynamic and intuitive interface that brings cricket enthusiasts closer to the game and we remain committed to BTCL's vision, with ongoing development in multiple phases. This collaborative journey promises to reshape the digital landscape for the cricketing community",
         "image": "/uploads/1776881942689_btcl_banner_01.svg"
       },
       "keyFeatures": {

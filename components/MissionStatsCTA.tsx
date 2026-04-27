@@ -27,8 +27,8 @@ export function MissionStatsCTA({ showButtons = true }: { showButtons?: boolean 
         {/* Pitch Text */}
         <div className="text-center mb-12 max-w-[1100px] mx-auto">
           <p className="text-white text-[23px] leading-[1.4] font-medium">
-            Are you searching for a <span className="font-bold text-white">finest team ⚡</span> to take your idea to the ever active market 🚀? <br className="hidden md:block" />
-            You are in a <span className="font-bold text-white">right place</span> to get gear-up 💪!
+            Are you searching for a <span className="font-bold text-white">finest team</span> to take your idea to the ever active market? <br className="hidden md:block" />
+            You are in a <span className="font-bold text-white">right place</span> to get gear-up!
           </p>
         </div>
 
@@ -40,14 +40,14 @@ export function MissionStatsCTA({ showButtons = true }: { showButtons?: boolean 
               className="w-full sm:w-auto px-14 py-3 bg-white text-[#15CEFF] font-bold text-lg rounded-xl 
               hover:bg-slate-50 transition-all shadow-xl hover:shadow-cyan-400/20 flex items-center justify-center gap-2 group"
             >
-              Services 💻
+              Services
             </a>
             <a 
               href="/contact" 
               className="w-full sm:w-auto px-14 py-3 bg-transparent border-2 border-white text-white font-bold text-lg rounded-xl 
               hover:bg-white/10 transition-all flex items-center justify-center gap-2"
             >
-              Schedule a consultation 📅
+              Schedule a consultation
             </a>
           </div>
         )}

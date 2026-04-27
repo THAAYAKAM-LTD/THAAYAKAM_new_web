@@ -18,8 +18,8 @@ export function Header() {
   ];
 
   return (
-    <header className="flex w-full justify-center pt-8 px-4 relative z-[100]">
-      <div className="flex w-full max-w-[1280px] items-center justify-between h-[68px] bg-white rounded-2xl border border-gray-100 shadow-sm px-6 relative z-50">
+    <header className="sticky top-0 left-0 w-full bg-white border-b border-gray-100 z-[100]">
+      <div className="max-w-[1280px] mx-auto h-[80px] flex items-center justify-between px-6 relative z-50">
         
         {/* Logo Section */}
         <Link href="/" className="flex items-center">

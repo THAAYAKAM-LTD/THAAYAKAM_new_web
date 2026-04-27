@@ -32,7 +32,7 @@ export function ShareResumeSection({ data }: ShareResumeProps) {
             className="inline-flex items-center justify-center w-[179px] h-[40px] bg-[#15CEFF] text-white font-bold text-[14px] rounded-[10px] 
             hover:bg-[#0ea5e9] transition-all shadow-md hover:shadow-cyan-100 gap-2"
           >
-            Share Resume 📄
+            Share Resume
           </a>
         </div>
       </div>

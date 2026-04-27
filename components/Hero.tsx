@@ -120,7 +120,7 @@ export function Hero({ data }: HeroProps) {
 
             {/* Typewriter */}
             <div className="flex items-center gap-2 text-2xl lg:text-[35px] font-medium font-serif text-[#00D084] tracking-[0.02em]">
-              <span>🚀 Ignite your</span>
+              <span>Ignite your</span>
               <span className="relative inline-flex items-center min-w-[200px]">
                 {displayText}
                 <span className="inline-block w-[3px] h-8 bg-[#00D084] ml-1 animate-pulse" />

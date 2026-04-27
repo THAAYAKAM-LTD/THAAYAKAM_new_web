@@ -103,7 +103,7 @@ export function Services({ data }: ServicesProps) {
         <div className="flex justify-center mt-20 z-20">
           <Link href="/contact">
             <button className="px-10 py-4 rounded-[10px] bg-[#15CEFF] text-white font-bold text-[18px] hover:bg-[#00b4d8] transition-all shadow-lg hover:shadow-cyan-100">
-              Schedule a consultation 📅
+              Schedule a consultation
             </button>
           </Link>
         </div>

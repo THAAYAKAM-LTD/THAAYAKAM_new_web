@@ -10,10 +10,10 @@ export function ContactForm() {
         {/* Header */}
         <div className="text-center mb-12 flex flex-col gap-6">
           <h2 className="text-[#15CEFF] text-[20px] font-semibold tracking-tight">
-            Initiate Contact with Form 📇
+            Initiate Contact with Form
           </h2>
           <p className="text-[#000000] text-[16px] font-normal whitespace-nowrap leading-relaxed">
-            Initiate contact by filling out the form below 📇. We're excited to explore possibilities together 🚀.
+            Initiate contact by filling out the form below. We're excited to explore possibilities together.
           </p>
         </div>
 
@@ -92,7 +92,7 @@ export function ContactForm() {
                 type="submit"
                 className="w-[143px] h-[40px] rounded-xl text-[14px] font-bold bg-[#15CEFF] hover:bg-[#00acc1] flex items-center justify-center gap-2 p-0"
               >
-                Submit 📩
+                Submit
               </Button>
             </div>
           </form>

@@ -37,14 +37,14 @@ export function MissionStatsCTA({ showButtons = true }: { showButtons?: boolean 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a 
               href="/services" 
-              className="w-full sm:w-auto px-14 py-3 bg-white text-[#15CEFF] font-bold text-lg rounded-[10px] 
+              className="w-full sm:w-auto px-14 py-3 bg-white text-[#15CEFF] font-bold text-lg rounded-xl 
               hover:bg-slate-50 transition-all shadow-xl hover:shadow-cyan-400/20 flex items-center justify-center gap-2 group"
             >
               Services 💻
             </a>
             <a 
               href="/contact" 
-              className="w-full sm:w-auto px-14 py-3 bg-transparent border-2 border-white text-white font-bold text-lg rounded-[10px] 
+              className="w-full sm:w-auto px-14 py-3 bg-transparent border-2 border-white text-white font-bold text-lg rounded-xl 
               hover:bg-white/10 transition-all flex items-center justify-center gap-2"
             >
               Schedule a consultation 📅

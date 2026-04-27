@@ -44,7 +44,7 @@ export function ServiceHero({ data }: ServiceHeroProps) {
 
             <div>
               <Link href="/contact">
-                <Button variant="button-general" className="w-[224px] h-[40px] bg-[#15CEFF] hover:bg-[#00BCD4] text-white rounded-none border-none shadow-sm transition-all duration-300 flex items-center justify-center p-0">
+                <Button variant="button-general" className="w-[224px] h-[40px] bg-[#15CEFF] hover:bg-[#00BCD4] text-white border-none shadow-sm transition-all duration-300 flex items-center justify-center p-0">
                   {data.cta}
                 </Button>
               </Link>

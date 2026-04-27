@@ -87,25 +87,8 @@ export function Hero({ data }: HeroProps) {
           from { stroke-dashoffset: 0; }
           to { stroke-dashoffset: -100; }
         }
-        @keyframes comet-move {
-          0% { stroke-dashoffset: 400; opacity: 0; }
-          20% { opacity: 1; }
-          80% { opacity: 1; }
-          100% { stroke-dashoffset: 0; opacity: 0; }
-        }
-        @keyframes core-glow {
-          0%, 100% { filter: drop-shadow(0 0 10px rgba(21, 206, 255, 0.2)); }
-          50% { filter: drop-shadow(0 0 30px rgba(21, 206, 255, 0.5)); }
-        }
-
         .orbit-dashed-anim {
           animation: dash-move 5s linear infinite;
-        }
-        .comet-effect-anim {
-          animation: comet-move 4s linear infinite;
-        }
-        .core-glow-anim {
-          animation: core-glow 3s ease-in-out infinite;
         }
       `}} />
 
@@ -148,12 +131,12 @@ export function Hero({ data }: HeroProps) {
           {/* CTA buttons */}
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/contact">
-              <button className="h-14 min-w-[240px] px-8 rounded-full bg-brand-primary hover:bg-[#00acc1] text-white text-base font-bold shadow-xl transition-all">
+              <button className="h-14 min-w-[240px] px-8 rounded-xl bg-brand-primary hover:bg-[#00acc1] text-white text-base font-bold shadow-xl transition-all">
                 {data.cta}
               </button>
             </Link>
             <Link href="#services">
-              <button className="h-14 min-w-[150px] px-8 rounded-full border-2 border-brand-primary/40 text-brand-primary hover:bg-brand-primary/5 text-base font-bold transition-all">
+              <button className="h-14 min-w-[150px] px-8 rounded-xl border-2 border-brand-primary/40 text-brand-primary hover:bg-brand-primary/5 text-base font-bold transition-all">
                 {data.explore}
               </button>
             </Link>
@@ -162,13 +145,8 @@ export function Hero({ data }: HeroProps) {
 
         {/* ---------- Right column — landing image 584x584 ---------- */}
         <div className="relative w-full max-w-[584px] mx-auto aspect-square select-none">
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] rounded-full pointer-events-none z-0"
-            style={{ background: "rgba(21, 206, 255, 0.08)", filter: "blur(120px)" }}
-          />
-
           <div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square rounded-full bg-white shadow-[0_0_120px_rgba(21,206,255,0.12)] z-0"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square rounded-full bg-white z-0"
             aria-hidden="true"
           />
 
@@ -190,18 +168,7 @@ export function Hero({ data }: HeroProps) {
               className="orbit-dashed-anim"
               vectorEffect="non-scaling-stroke"
             />
-            <circle
-              cx="50"
-              cy="50"
-              r="42.5"
-              fill="none"
-              stroke="#15CEFF"
-              strokeWidth="1.2"
-              strokeDasharray="40 160"
-              className="comet-effect-anim"
-              style={{ filter: "drop-shadow(0 0 8px #15CEFF)" }}
-              vectorEffect="non-scaling-stroke"
-            />
+
             <circle
               cx="50"
               cy="50"
@@ -214,21 +181,10 @@ export function Hero({ data }: HeroProps) {
               className="orbit-dashed-anim"
               vectorEffect="non-scaling-stroke"
             />
-            <circle
-              cx="50"
-              cy="50"
-              r="35"
-              fill="none"
-              stroke="#15CEFF"
-              strokeWidth="1.2"
-              strokeDasharray="30 170"
-              className="comet-effect-anim"
-              style={{ filter: "drop-shadow(0 0 8px #15CEFF)" }}
-              vectorEffect="non-scaling-stroke"
-            />
+
           </svg>
 
-          <div className="core-glow-anim absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[53%] aspect-square flex items-center justify-center">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-[53%] aspect-square flex items-center justify-center">
             <svg
               viewBox="0 0 100 100"
               className="w-full h-full drop-shadow-[0_25px_50px_rgba(0,0,0,0.07)]"
@@ -277,11 +233,11 @@ export function Hero({ data }: HeroProps) {
                 height: `${icon.cardSize}px`,
               }}
             >
-              <div className="w-full h-full flex items-center justify-center hover:scale-125 transition-all duration-300 cursor-pointer group rounded-full hover:shadow-[0_0_25px_rgba(21,206,255,0.4)]">
+              <div className="w-full h-full flex items-center justify-center hover:scale-125 transition-all duration-300 cursor-pointer group rounded-full">
                 <img
                   src={icon.src}
                   alt={icon.label}
-                  className="w-full h-full object-contain filter drop-shadow-sm transition-all"
+                  className="w-full h-full object-contain transition-all"
                 />
               </div>
             </div>
@@ -296,14 +252,14 @@ export function Hero({ data }: HeroProps) {
                 <img
                   src="/icon/shopify_partners_logo.svg"
                   alt="Shopify Partners"
-                  className="w-full h-full object-contain filter drop-shadow-sm"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div className="lg:hidden" style={{ width: "150px", height: "36px" }}>
                 <img
                   src="/icon/shopify_partners_logo.svg"
                   alt="Shopify Partners"
-                  className="w-full h-full object-contain filter drop-shadow-sm"
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>

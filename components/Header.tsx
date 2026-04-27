@@ -52,7 +52,7 @@ export function Header() {
           <div className="hidden lg:block">
             <Link href="/contact">
               <Button 
-                className="w-auto rounded-full px-8 text-sm font-semibold tracking-wider bg-brand-primary hover:bg-[#0ea5e9]"
+                className="w-auto rounded-xl px-8 text-sm font-semibold tracking-wider bg-brand-primary hover:bg-[#0ea5e9]"
               >
                 Contact
               </Button>
